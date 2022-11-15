@@ -392,6 +392,7 @@
             this.UploadPhotoButton.TabIndex = 24;
             this.UploadPhotoButton.Text = "Загрузить";
             this.UploadPhotoButton.UseVisualStyleBackColor = true;
+            this.UploadPhotoButton.Click += new System.EventHandler(this.UploadPhotoButton_Click);
             // 
             // Table
             // 

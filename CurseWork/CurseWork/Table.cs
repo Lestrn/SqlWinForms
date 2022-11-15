@@ -27,5 +27,23 @@ namespace CurseWork
                     break;
             }
         }
+
+        private void UploadPhotoButton_Click(object sender, System.EventArgs e)
+        {
+            using(OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Title = "Open Image";
+                ofd.Filter = "image files(*.jpg; *.png)|*.jpg; *.png";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    Form pictureForm = new PhotoView(ofd.FileName);
+                    pictureForm.ShowDialog();
+
+                    
+                }
+
+            }
+        }
     }
 }
