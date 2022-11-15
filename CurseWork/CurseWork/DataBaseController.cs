@@ -16,5 +16,11 @@ namespace CurseWork
         {
             InitializeComponent();
         }
+
+        private void OpenTableButton_Click(object sender, EventArgs e)
+        {
+            Form tableForm = new Table();
+            tableForm.ShowDialog();
+        }
     }
 }
