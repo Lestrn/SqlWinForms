@@ -47,7 +47,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(9, 181);
+            this.AddButton.Location = new System.Drawing.Point(11, 423);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
@@ -57,7 +57,7 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(208, 181);
+            this.RemoveButton.Location = new System.Drawing.Point(142, 423);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
@@ -67,7 +67,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(416, 181);
+            this.EditButton.Location = new System.Drawing.Point(340, 423);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
@@ -79,11 +79,11 @@
             // 
             this.LibraryGroupBox.Controls.Add(this.AuthorTextBox);
             this.LibraryGroupBox.Controls.Add(this.AuthorLabel);
-            this.LibraryGroupBox.Location = new System.Drawing.Point(175, 10);
+            this.LibraryGroupBox.Location = new System.Drawing.Point(61, 22);
             this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
             this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.LibraryGroupBox.Size = new System.Drawing.Size(150, 152);
+            this.LibraryGroupBox.Size = new System.Drawing.Size(325, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
             this.LibraryGroupBox.Text = "Библиотека";
@@ -111,11 +111,11 @@
             // 
             this.ReaderGroupBox.Controls.Add(this.FIOLabel);
             this.ReaderGroupBox.Controls.Add(this.FIOTextBox);
-            this.ReaderGroupBox.Location = new System.Drawing.Point(9, 10);
+            this.ReaderGroupBox.Location = new System.Drawing.Point(61, 22);
             this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ReaderGroupBox.Name = "ReaderGroupBox";
             this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ReaderGroupBox.Size = new System.Drawing.Size(150, 152);
+            this.ReaderGroupBox.Size = new System.Drawing.Size(325, 379);
             this.ReaderGroupBox.TabIndex = 4;
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
@@ -143,11 +143,11 @@
             // 
             this.MagazineGroupBox.Controls.Add(this.StatusLabel);
             this.MagazineGroupBox.Controls.Add(this.StatusTextBox);
-            this.MagazineGroupBox.Location = new System.Drawing.Point(345, 11);
+            this.MagazineGroupBox.Location = new System.Drawing.Point(61, 22);
             this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MagazineGroupBox.Name = "MagazineGroupBox";
             this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MagazineGroupBox.Size = new System.Drawing.Size(150, 152);
+            this.MagazineGroupBox.Size = new System.Drawing.Size(325, 379);
             this.MagazineGroupBox.TabIndex = 5;
             this.MagazineGroupBox.TabStop = false;
             this.MagazineGroupBox.Text = "Журнал";
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 310);
+            this.ClientSize = new System.Drawing.Size(699, 494);
             this.Controls.Add(this.MagazineGroupBox);
             this.Controls.Add(this.ReaderGroupBox);
             this.Controls.Add(this.LibraryGroupBox);
