@@ -12,9 +12,14 @@ namespace CurseWork
 {
     public partial class Query : Form
     {
-        public Query()
+        public Query(string selectedQuery)
         {
             InitializeComponent();
+            SelectedQuery = selectedQuery;
+            Text = selectedQuery;
         }
+        public string SelectedQuery { get; }
+
+
     }
 }

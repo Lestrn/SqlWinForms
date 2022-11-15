@@ -21,5 +21,16 @@ namespace CurseWork
             Table tableForm = new Table(TabelsComboBox.Text);
             tableForm.ShowDialog();
         }
+
+        private void OpenQueryButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(QueryComboBox.Text))
+            {
+                MessageBox.Show("Вы должны выбрать запрос!", "Error", MessageBoxButtons.OK);
+                return;
+            }
+            Query queryForm = new Query(QueryComboBox.Text);
+            queryForm.ShowDialog();
+        }
     }
 }

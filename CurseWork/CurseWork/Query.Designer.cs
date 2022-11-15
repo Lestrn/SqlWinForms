@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CaptionLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(2, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(423, 22);
+            this.textBox1.TabIndex = 0;
+            // 
+            // CaptionLabel
+            // 
+            this.CaptionLabel.AutoSize = true;
+            this.CaptionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.CaptionLabel.Location = new System.Drawing.Point(12, 18);
+            this.CaptionLabel.Name = "CaptionLabel";
+            this.CaptionLabel.Size = new System.Drawing.Size(122, 31);
+            this.CaptionLabel.TabIndex = 1;
+            this.CaptionLabel.Text = "Выборка";
+            // 
+            // Query
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(631, 447);
+            this.Controls.Add(this.CaptionLabel);
+            this.Controls.Add(this.textBox1);
+            this.Name = "Query";
             this.Text = "Query";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label CaptionLabel;
     }
 }
