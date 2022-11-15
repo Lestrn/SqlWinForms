@@ -1,21 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CurseWork
 {
     public partial class Table : Form
     {
-        public Table()
+        public Table(string choosedTable)
         {
             InitializeComponent();
+            ChoosedTable = choosedTable;
         }
-        public string ChoosedTable { get; set; }
+
+        public string ChoosedTable { get; }
+
+        private void TableForm_Load(object sender, System.EventArgs e)
+        {
+            switch (ChoosedTable)
+            {
+                case "Библиотека":
+                    LibraryGroupBox.Visible = true;
+                    break;
+                case "Читатели":
+                    ReaderGroupBox.Visible = true;
+                    break;
+                case "Журнал":
+                    MagazineGroupBox.Visible = true;
+                    break;
+            }
+        }
     }
 }
