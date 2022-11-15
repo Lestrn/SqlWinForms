@@ -19,7 +19,13 @@ namespace CurseWork
 
         private void OpenTableButton_Click(object sender, EventArgs e)
         {
-            Form tableForm = new Table();
+            Table tableForm = new Table();
+            tableForm.ChoosedTable = this.TabelsComboBox.Text;
+            if (string.IsNullOrEmpty(tableForm.ChoosedTable))
+            {
+                MessageBox.Show("Вы должны выбрать таблицу!", "Error", MessageBoxButtons.OK);
+                return;
+            }
             tableForm.ShowDialog();
         }
     }

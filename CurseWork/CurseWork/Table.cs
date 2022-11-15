@@ -16,5 +16,6 @@ namespace CurseWork
         {
             InitializeComponent();
         }
+        public string ChoosedTable { get; set; }
     }
 }

@@ -76,7 +76,7 @@
             // 
             this.LibraryGroupBox.Controls.Add(this.AuthorTextBox);
             this.LibraryGroupBox.Controls.Add(this.AuthorLabel);
-            this.LibraryGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.LibraryGroupBox.Location = new System.Drawing.Point(233, 12);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
             this.LibraryGroupBox.Size = new System.Drawing.Size(226, 187);
             this.LibraryGroupBox.TabIndex = 3;
@@ -87,23 +87,25 @@
             // 
             this.ReaderGroupBox.Controls.Add(this.FIOLabel);
             this.ReaderGroupBox.Controls.Add(this.FIOTextBox);
-            this.ReaderGroupBox.Location = new System.Drawing.Point(244, 12);
+            this.ReaderGroupBox.Location = new System.Drawing.Point(465, 12);
             this.ReaderGroupBox.Name = "ReaderGroupBox";
             this.ReaderGroupBox.Size = new System.Drawing.Size(240, 187);
             this.ReaderGroupBox.TabIndex = 4;
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
+            this.ReaderGroupBox.Visible = false;
             // 
             // MagazineGroupBox
             // 
             this.MagazineGroupBox.Controls.Add(this.StatusLabel);
             this.MagazineGroupBox.Controls.Add(this.StatusTextBox);
-            this.MagazineGroupBox.Location = new System.Drawing.Point(490, 12);
+            this.MagazineGroupBox.Location = new System.Drawing.Point(12, 12);
             this.MagazineGroupBox.Name = "MagazineGroupBox";
             this.MagazineGroupBox.Size = new System.Drawing.Size(200, 187);
             this.MagazineGroupBox.TabIndex = 5;
             this.MagazineGroupBox.TabStop = false;
             this.MagazineGroupBox.Text = "Журнал";
+            this.MagazineGroupBox.Visible = false;
             // 
             // AuthorLabel
             // 
