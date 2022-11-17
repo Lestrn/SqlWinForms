@@ -36,7 +36,7 @@ namespace CurseWork
             {
                 ListViewItem listViewItem = new ListViewItem();
                 listViewItem.Text = reader.GetString(0);
-                for (int j = 1; j <= 4; j++)
+                for (int j = 1; j <= 3; j++)
                 {
                     listViewItem.SubItems.Add(reader.GetValue(j).ToString());
                 }
