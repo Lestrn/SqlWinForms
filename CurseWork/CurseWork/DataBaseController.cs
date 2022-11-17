@@ -20,8 +20,15 @@ namespace CurseWork
                 return;
             }
 
-            Table tableForm = new Table(TabelsComboBox.Text);
-            tableForm.ShowDialog();
+            Form form = default;
+            switch (TabelsComboBox.Text)
+            {
+                case "Библиотека":
+                    form = new LibraryTable();
+                    break;
+            }
+
+            form.ShowDialog();
         }
 
         private void OpenQueryButton_Click(object sender, EventArgs e)

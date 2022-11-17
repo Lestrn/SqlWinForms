@@ -91,11 +91,11 @@
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Table.cs">
+    <Compile Include="LibraryTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Table.Designer.cs">
-      <DependentUpon>Table.cs</DependentUpon>
+    <Compile Include="LibraryTable.Designer.cs">
+      <DependentUpon>LibraryTable.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DataBaseController.resx">
       <DependentUpon>DataBaseController.cs</DependentUpon>
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Table.resx">
-      <DependentUpon>Table.cs</DependentUpon>
+    <EmbeddedResource Include="LibraryTable.resx">
+      <DependentUpon>LibraryTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
