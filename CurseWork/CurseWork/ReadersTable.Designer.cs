@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.ReaderGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.FIOLabel = new System.Windows.Forms.Label();
             this.FIOTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ReaderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReaderGroupBox
             // 
+            this.ReaderGroupBox.Controls.Add(this.textBox1);
             this.ReaderGroupBox.Controls.Add(this.label3);
             this.ReaderGroupBox.Controls.Add(this.label2);
             this.ReaderGroupBox.Controls.Add(this.label1);
@@ -53,6 +55,33 @@
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
             this.ReaderGroupBox.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ФИО: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "ФИО: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ФИО: ";
             // 
             // FIOLabel
             // 
@@ -71,32 +100,13 @@
             this.FIOTextBox.Size = new System.Drawing.Size(95, 22);
             this.FIOTextBox.TabIndex = 2;
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ФИО: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ФИО: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ФИО: ";
+            this.textBox1.Location = new System.Drawing.Point(142, 125);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(95, 22);
+            this.textBox1.TabIndex = 6;
             // 
             // ReadersTable
             // 
@@ -120,5 +130,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
