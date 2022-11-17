@@ -26,6 +26,12 @@ namespace CurseWork
                 case "Библиотека":
                     form = new LibraryTable();
                     break;
+                case "Журнал":
+                    form = new MagazineTable();
+                    break;
+                case "Читатели":
+                    form = new ReadersTable();
+                    break;
             }
 
             form.ShowDialog();
