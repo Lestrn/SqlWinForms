@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,20 @@ namespace CurseWork
 {
     public partial class PhotoView : Form
     {
-        public PhotoView(string fileName)
+        public PhotoView(string base64Img)
         {
             InitializeComponent();
-            FileName = fileName;
+            Base64Img = base64Img;
         }
-        public string FileName { get;}
+
+        public string Base64Img { get;}
 
         private void PhotoView_Load(object sender, EventArgs e)
-        {          
-            SelectedPicture.Image = Image.FromFile(FileName);
+        {
+            using (MemoryStream memoryStream = new MemoryStream(Convert.FromBase64String(Base64Img)))
+            {
+                SelectedPicture.Image = Image.FromStream(memoryStream);
+            }
         }
     }
 }

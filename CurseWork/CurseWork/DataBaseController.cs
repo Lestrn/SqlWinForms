@@ -10,6 +10,8 @@ namespace CurseWork
             InitializeComponent();
         }
 
+        public static string DatabaseConnection { get; } = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../../Database.accdb";
+
         private void OpenTableButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TabelsComboBox.Text))
@@ -29,6 +31,7 @@ namespace CurseWork
                 MessageBox.Show("Вы должны выбрать запрос!", "Error", MessageBoxButtons.OK);
                 return;
             }
+
             Query queryForm = new Query(QueryComboBox.Text);
             queryForm.ShowDialog();
         }

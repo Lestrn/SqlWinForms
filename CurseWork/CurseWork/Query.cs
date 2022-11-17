@@ -18,8 +18,7 @@ namespace CurseWork
             SelectedQuery = selectedQuery;
             Text = selectedQuery;
         }
+
         public string SelectedQuery { get; }
-
-
     }
 }

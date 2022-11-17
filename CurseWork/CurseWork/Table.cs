@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace CurseWork
 {
@@ -11,6 +13,8 @@ namespace CurseWork
         }
 
         public string ChoosedTable { get; }
+
+        public string ImgFileName { get; set; }
 
         private void TableForm_Load(object sender, System.EventArgs e)
         {
@@ -37,13 +41,21 @@ namespace CurseWork
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    Form pictureForm = new PhotoView(ofd.FileName);
-                    pictureForm.ShowDialog();
-
-                    
+                    ImgFileName = ofd.FileName;
                 }
-
             }
+        }
+
+        private void OpenPhotoButton_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ImgFileName))
+            {
+                MessageBox.Show("Выбирите фото", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            Form imgForm = new PhotoView(Convert.ToBase64String(File.ReadAllBytes(ImgFileName)));
+            imgForm.ShowDialog();
         }
     }
 }

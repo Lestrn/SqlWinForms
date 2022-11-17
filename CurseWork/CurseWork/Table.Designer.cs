@@ -32,6 +32,8 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.LibraryGroupBox = new System.Windows.Forms.GroupBox();
+            this.UploadPhotoButton = new System.Windows.Forms.Button();
+            this.OpenPhotoButton = new System.Windows.Forms.Button();
             this.NewDayOutComboBox = new System.Windows.Forms.ComboBox();
             this.BookNameTextBox = new System.Windows.Forms.TextBox();
             this.GenreTextBox = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.MagazineGroupBox = new System.Windows.Forms.GroupBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.StatusTextBox = new System.Windows.Forms.TextBox();
-            this.OpenPhotoButton = new System.Windows.Forms.Button();
-            this.UploadPhotoButton = new System.Windows.Forms.Button();
             this.LibraryGroupBox.SuspendLayout();
             this.ReaderGroupBox.SuspendLayout();
             this.MagazineGroupBox.SuspendLayout();
@@ -68,30 +68,30 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(15, 521);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddButton.Location = new System.Drawing.Point(11, 423);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(124, 30);
+            this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(189, 521);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RemoveButton.Location = new System.Drawing.Point(142, 423);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(124, 30);
+            this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 1;
             this.RemoveButton.Text = "Удалить";
             this.RemoveButton.UseVisualStyleBackColor = true;
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(453, 521);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EditButton.Location = new System.Drawing.Point(340, 423);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(124, 30);
+            this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 2;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -121,15 +121,37 @@
             this.LibraryGroupBox.Controls.Add(this.AuthorLabel);
             this.LibraryGroupBox.Controls.Add(this.AuthorTextBox);
             this.LibraryGroupBox.Controls.Add(this.BookNameLabel);
-            this.LibraryGroupBox.Location = new System.Drawing.Point(81, 27);
-            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LibraryGroupBox.Location = new System.Drawing.Point(61, 22);
+            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
-            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LibraryGroupBox.Size = new System.Drawing.Size(433, 466);
+            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LibraryGroupBox.Size = new System.Drawing.Size(325, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
             this.LibraryGroupBox.Text = "Библиотека";
             this.LibraryGroupBox.Visible = false;
+            // 
+            // UploadPhotoButton
+            // 
+            this.UploadPhotoButton.Location = new System.Drawing.Point(126, 158);
+            this.UploadPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UploadPhotoButton.Name = "UploadPhotoButton";
+            this.UploadPhotoButton.Size = new System.Drawing.Size(71, 20);
+            this.UploadPhotoButton.TabIndex = 24;
+            this.UploadPhotoButton.Text = "Загрузить";
+            this.UploadPhotoButton.UseVisualStyleBackColor = true;
+            this.UploadPhotoButton.Click += new System.EventHandler(this.UploadPhotoButton_Click);
+            // 
+            // OpenPhotoButton
+            // 
+            this.OpenPhotoButton.Location = new System.Drawing.Point(50, 158);
+            this.OpenPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenPhotoButton.Name = "OpenPhotoButton";
+            this.OpenPhotoButton.Size = new System.Drawing.Size(71, 20);
+            this.OpenPhotoButton.TabIndex = 23;
+            this.OpenPhotoButton.Text = "Открыть";
+            this.OpenPhotoButton.UseVisualStyleBackColor = true;
+            this.OpenPhotoButton.Click += new System.EventHandler(this.OpenPhotoButton_Click);
             // 
             // NewDayOutComboBox
             // 
@@ -137,179 +159,191 @@
             this.NewDayOutComboBox.Items.AddRange(new object[] {
             "Да, новое",
             "Нет, старое"});
-            this.NewDayOutComboBox.Location = new System.Drawing.Point(126, 346);
+            this.NewDayOutComboBox.Location = new System.Drawing.Point(94, 281);
+            this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewDayOutComboBox.Name = "NewDayOutComboBox";
-            this.NewDayOutComboBox.Size = new System.Drawing.Size(95, 24);
+            this.NewDayOutComboBox.Size = new System.Drawing.Size(72, 21);
             this.NewDayOutComboBox.TabIndex = 22;
             // 
             // BookNameTextBox
             // 
-            this.BookNameTextBox.Location = new System.Drawing.Point(126, 39);
-            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BookNameTextBox.Location = new System.Drawing.Point(94, 32);
+            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BookNameTextBox.Name = "BookNameTextBox";
-            this.BookNameTextBox.Size = new System.Drawing.Size(95, 22);
+            this.BookNameTextBox.Size = new System.Drawing.Size(72, 20);
             this.BookNameTextBox.TabIndex = 21;
             // 
             // GenreTextBox
             // 
-            this.GenreTextBox.Location = new System.Drawing.Point(126, 158);
-            this.GenreTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GenreTextBox.Location = new System.Drawing.Point(94, 128);
+            this.GenreTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GenreTextBox.Name = "GenreTextBox";
-            this.GenreTextBox.Size = new System.Drawing.Size(95, 22);
+            this.GenreTextBox.Size = new System.Drawing.Size(72, 20);
             this.GenreTextBox.TabIndex = 20;
             // 
             // KeyWordsTextBox
             // 
-            this.KeyWordsTextBox.Location = new System.Drawing.Point(126, 426);
-            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.KeyWordsTextBox.Location = new System.Drawing.Point(94, 346);
+            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.KeyWordsTextBox.Name = "KeyWordsTextBox";
-            this.KeyWordsTextBox.Size = new System.Drawing.Size(95, 22);
+            this.KeyWordsTextBox.Size = new System.Drawing.Size(72, 20);
             this.KeyWordsTextBox.TabIndex = 18;
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(126, 387);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(94, 314);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(95, 22);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(72, 20);
             this.DescriptionTextBox.TabIndex = 17;
             // 
             // CodeTextBox
             // 
-            this.CodeTextBox.Location = new System.Drawing.Point(126, 237);
-            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CodeTextBox.Location = new System.Drawing.Point(94, 193);
+            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CodeTextBox.Name = "CodeTextBox";
-            this.CodeTextBox.Size = new System.Drawing.Size(95, 22);
+            this.CodeTextBox.Size = new System.Drawing.Size(72, 20);
             this.CodeTextBox.TabIndex = 16;
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(126, 312);
-            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AmountTextBox.Location = new System.Drawing.Point(94, 254);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AmountTextBox.Name = "AmountTextBox";
-            this.AmountTextBox.Size = new System.Drawing.Size(95, 22);
+            this.AmountTextBox.Size = new System.Drawing.Size(72, 20);
             this.AmountTextBox.TabIndex = 14;
             // 
             // CostTextBox
             // 
-            this.CostTextBox.Location = new System.Drawing.Point(126, 265);
-            this.CostTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CostTextBox.Location = new System.Drawing.Point(94, 215);
+            this.CostTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(95, 22);
+            this.CostTextBox.Size = new System.Drawing.Size(72, 20);
             this.CostTextBox.TabIndex = 13;
             // 
             // DayOutTextBox
             // 
-            this.DayOutTextBox.Location = new System.Drawing.Point(137, 118);
-            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DayOutTextBox.Location = new System.Drawing.Point(103, 96);
+            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DayOutTextBox.Name = "DayOutTextBox";
-            this.DayOutTextBox.Size = new System.Drawing.Size(95, 22);
+            this.DayOutTextBox.Size = new System.Drawing.Size(72, 20);
             this.DayOutTextBox.TabIndex = 12;
             // 
             // KeyWordsLabel
             // 
             this.KeyWordsLabel.AutoSize = true;
-            this.KeyWordsLabel.Location = new System.Drawing.Point(5, 432);
+            this.KeyWordsLabel.Location = new System.Drawing.Point(4, 351);
+            this.KeyWordsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.KeyWordsLabel.Name = "KeyWordsLabel";
-            this.KeyWordsLabel.Size = new System.Drawing.Size(116, 16);
+            this.KeyWordsLabel.Size = new System.Drawing.Size(92, 13);
             this.KeyWordsLabel.TabIndex = 11;
             this.KeyWordsLabel.Text = "Ключивые слова";
             // 
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(7, 393);
+            this.DescriptionLabel.Location = new System.Drawing.Point(5, 319);
+            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(72, 16);
+            this.DescriptionLabel.Size = new System.Drawing.Size(57, 13);
             this.DescriptionLabel.TabIndex = 10;
             this.DescriptionLabel.Text = "Описание";
             // 
             // NewDayOutLabel
             // 
             this.NewDayOutLabel.AutoSize = true;
-            this.NewDayOutLabel.Location = new System.Drawing.Point(6, 349);
+            this.NewDayOutLabel.Location = new System.Drawing.Point(4, 284);
+            this.NewDayOutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NewDayOutLabel.Name = "NewDayOutLabel";
-            this.NewDayOutLabel.Size = new System.Drawing.Size(108, 16);
+            this.NewDayOutLabel.Size = new System.Drawing.Size(84, 13);
             this.NewDayOutLabel.TabIndex = 9;
             this.NewDayOutLabel.Text = "Новое издание";
             // 
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
-            this.AmountLabel.Location = new System.Drawing.Point(7, 312);
+            this.AmountLabel.Location = new System.Drawing.Point(5, 254);
+            this.AmountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(85, 16);
+            this.AmountLabel.Size = new System.Drawing.Size(66, 13);
             this.AmountLabel.TabIndex = 8;
             this.AmountLabel.Text = "Количество";
             // 
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
-            this.CostLabel.Location = new System.Drawing.Point(7, 271);
+            this.CostLabel.Location = new System.Drawing.Point(5, 220);
+            this.CostLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CostLabel.Name = "CostLabel";
-            this.CostLabel.Size = new System.Drawing.Size(40, 16);
+            this.CostLabel.Size = new System.Drawing.Size(33, 13);
             this.CostLabel.TabIndex = 7;
             this.CostLabel.Text = "Цена";
             // 
             // CodeLabel
             // 
             this.CodeLabel.AutoSize = true;
-            this.CodeLabel.Location = new System.Drawing.Point(7, 243);
+            this.CodeLabel.Location = new System.Drawing.Point(5, 197);
+            this.CodeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CodeLabel.Name = "CodeLabel";
-            this.CodeLabel.Size = new System.Drawing.Size(60, 16);
+            this.CodeLabel.Size = new System.Drawing.Size(53, 13);
             this.CodeLabel.TabIndex = 6;
             this.CodeLabel.Text = "Код УДК";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 202);
+            this.label4.Location = new System.Drawing.Point(5, 164);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Photo";
             // 
             // GenreLabel
             // 
             this.GenreLabel.AutoSize = true;
-            this.GenreLabel.Location = new System.Drawing.Point(7, 161);
+            this.GenreLabel.Location = new System.Drawing.Point(5, 131);
+            this.GenreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.GenreLabel.Name = "GenreLabel";
-            this.GenreLabel.Size = new System.Drawing.Size(44, 16);
+            this.GenreLabel.Size = new System.Drawing.Size(36, 13);
             this.GenreLabel.TabIndex = 4;
             this.GenreLabel.Text = "Жанр";
             // 
             // DayOutLabel
             // 
             this.DayOutLabel.AutoSize = true;
-            this.DayOutLabel.Location = new System.Drawing.Point(5, 121);
+            this.DayOutLabel.Location = new System.Drawing.Point(4, 98);
+            this.DayOutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DayOutLabel.Name = "DayOutLabel";
-            this.DayOutLabel.Size = new System.Drawing.Size(125, 16);
+            this.DayOutLabel.Size = new System.Drawing.Size(98, 13);
             this.DayOutLabel.TabIndex = 3;
             this.DayOutLabel.Text = "Год издательства";
             // 
             // AuthorLabel
             // 
             this.AuthorLabel.AutoSize = true;
-            this.AuthorLabel.Location = new System.Drawing.Point(5, 83);
+            this.AuthorLabel.Location = new System.Drawing.Point(4, 67);
+            this.AuthorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(47, 16);
+            this.AuthorLabel.Size = new System.Drawing.Size(37, 13);
             this.AuthorLabel.TabIndex = 2;
             this.AuthorLabel.Text = "Автор";
             // 
             // AuthorTextBox
             // 
-            this.AuthorTextBox.Location = new System.Drawing.Point(126, 83);
-            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AuthorTextBox.Location = new System.Drawing.Point(94, 67);
+            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(95, 22);
+            this.AuthorTextBox.Size = new System.Drawing.Size(72, 20);
             this.AuthorTextBox.TabIndex = 1;
             // 
             // BookNameLabel
             // 
             this.BookNameLabel.AutoSize = true;
-            this.BookNameLabel.Location = new System.Drawing.Point(7, 39);
+            this.BookNameLabel.Location = new System.Drawing.Point(5, 32);
+            this.BookNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BookNameLabel.Name = "BookNameLabel";
-            this.BookNameLabel.Size = new System.Drawing.Size(113, 16);
+            this.BookNameLabel.Size = new System.Drawing.Size(89, 13);
             this.BookNameLabel.TabIndex = 0;
             this.BookNameLabel.Text = "Название книги";
             // 
@@ -317,11 +351,11 @@
             // 
             this.ReaderGroupBox.Controls.Add(this.FIOLabel);
             this.ReaderGroupBox.Controls.Add(this.FIOTextBox);
-            this.ReaderGroupBox.Location = new System.Drawing.Point(363, 11);
-            this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReaderGroupBox.Location = new System.Drawing.Point(272, 9);
+            this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ReaderGroupBox.Name = "ReaderGroupBox";
-            this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ReaderGroupBox.Size = new System.Drawing.Size(433, 466);
+            this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReaderGroupBox.Size = new System.Drawing.Size(325, 379);
             this.ReaderGroupBox.TabIndex = 4;
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
@@ -330,29 +364,30 @@
             // FIOLabel
             // 
             this.FIOLabel.AutoSize = true;
-            this.FIOLabel.Location = new System.Drawing.Point(5, 42);
+            this.FIOLabel.Location = new System.Drawing.Point(4, 34);
+            this.FIOLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FIOLabel.Name = "FIOLabel";
-            this.FIOLabel.Size = new System.Drawing.Size(44, 16);
+            this.FIOLabel.Size = new System.Drawing.Size(40, 13);
             this.FIOLabel.TabIndex = 2;
             this.FIOLabel.Text = "ФИО: ";
             // 
             // FIOTextBox
             // 
-            this.FIOTextBox.Location = new System.Drawing.Point(147, 39);
-            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FIOTextBox.Location = new System.Drawing.Point(110, 32);
+            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FIOTextBox.Name = "FIOTextBox";
-            this.FIOTextBox.Size = new System.Drawing.Size(95, 22);
+            this.FIOTextBox.Size = new System.Drawing.Size(72, 20);
             this.FIOTextBox.TabIndex = 2;
             // 
             // MagazineGroupBox
             // 
             this.MagazineGroupBox.Controls.Add(this.StatusLabel);
             this.MagazineGroupBox.Controls.Add(this.StatusTextBox);
-            this.MagazineGroupBox.Location = new System.Drawing.Point(520, 27);
-            this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MagazineGroupBox.Location = new System.Drawing.Point(390, 22);
+            this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MagazineGroupBox.Name = "MagazineGroupBox";
-            this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MagazineGroupBox.Size = new System.Drawing.Size(433, 466);
+            this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MagazineGroupBox.Size = new System.Drawing.Size(325, 379);
             this.MagazineGroupBox.TabIndex = 5;
             this.MagazineGroupBox.TabStop = false;
             this.MagazineGroupBox.Text = "Журнал";
@@ -361,51 +396,33 @@
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(5, 39);
+            this.StatusLabel.Location = new System.Drawing.Point(4, 32);
+            this.StatusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(59, 16);
+            this.StatusLabel.Size = new System.Drawing.Size(47, 13);
             this.StatusLabel.TabIndex = 4;
             this.StatusLabel.Text = "Статус: ";
             // 
             // StatusTextBox
             // 
-            this.StatusTextBox.Location = new System.Drawing.Point(100, 39);
-            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StatusTextBox.Location = new System.Drawing.Point(75, 32);
+            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StatusTextBox.Name = "StatusTextBox";
-            this.StatusTextBox.Size = new System.Drawing.Size(95, 22);
+            this.StatusTextBox.Size = new System.Drawing.Size(72, 20);
             this.StatusTextBox.TabIndex = 3;
-            // 
-            // OpenPhotoButton
-            // 
-            this.OpenPhotoButton.Location = new System.Drawing.Point(67, 194);
-            this.OpenPhotoButton.Name = "OpenPhotoButton";
-            this.OpenPhotoButton.Size = new System.Drawing.Size(95, 24);
-            this.OpenPhotoButton.TabIndex = 23;
-            this.OpenPhotoButton.Text = "Открыть";
-            this.OpenPhotoButton.UseVisualStyleBackColor = true;
-            // 
-            // UploadPhotoButton
-            // 
-            this.UploadPhotoButton.Location = new System.Drawing.Point(168, 194);
-            this.UploadPhotoButton.Name = "UploadPhotoButton";
-            this.UploadPhotoButton.Size = new System.Drawing.Size(95, 24);
-            this.UploadPhotoButton.TabIndex = 24;
-            this.UploadPhotoButton.Text = "Загрузить";
-            this.UploadPhotoButton.UseVisualStyleBackColor = true;
-            this.UploadPhotoButton.Click += new System.EventHandler(this.UploadPhotoButton_Click);
             // 
             // Table
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 608);
+            this.ClientSize = new System.Drawing.Size(699, 494);
             this.Controls.Add(this.MagazineGroupBox);
             this.Controls.Add(this.ReaderGroupBox);
             this.Controls.Add(this.LibraryGroupBox);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Table";
             this.Text = "Table";
             this.Load += new System.EventHandler(this.TableForm_Load);
