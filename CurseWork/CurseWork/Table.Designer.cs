@@ -61,6 +61,19 @@
             this.MagazineGroupBox = new System.Windows.Forms.GroupBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.StatusTextBox = new System.Windows.Forms.TextBox();
+            this.LibraryListView = new System.Windows.Forms.ListView();
+            this.BookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DayOut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Photo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IsNewDayOut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.KeyWords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PublishName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LibraryGroupBox.SuspendLayout();
             this.ReaderGroupBox.SuspendLayout();
             this.MagazineGroupBox.SuspendLayout();
@@ -69,7 +82,7 @@
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(11, 423);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 0;
@@ -79,7 +92,7 @@
             // RemoveButton
             // 
             this.RemoveButton.Location = new System.Drawing.Point(142, 423);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 1;
@@ -89,7 +102,7 @@
             // EditButton
             // 
             this.EditButton.Location = new System.Drawing.Point(340, 423);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 2;
@@ -99,6 +112,7 @@
             // LibraryGroupBox
             // 
             this.LibraryGroupBox.Controls.Add(this.UploadPhotoButton);
+            this.LibraryGroupBox.Controls.Add(this.LibraryListView);
             this.LibraryGroupBox.Controls.Add(this.OpenPhotoButton);
             this.LibraryGroupBox.Controls.Add(this.NewDayOutComboBox);
             this.LibraryGroupBox.Controls.Add(this.BookNameTextBox);
@@ -122,10 +136,10 @@
             this.LibraryGroupBox.Controls.Add(this.AuthorTextBox);
             this.LibraryGroupBox.Controls.Add(this.BookNameLabel);
             this.LibraryGroupBox.Location = new System.Drawing.Point(61, 22);
-            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
-            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.LibraryGroupBox.Size = new System.Drawing.Size(325, 379);
+            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2);
+            this.LibraryGroupBox.Size = new System.Drawing.Size(604, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
             this.LibraryGroupBox.Text = "Библиотека";
@@ -134,7 +148,7 @@
             // UploadPhotoButton
             // 
             this.UploadPhotoButton.Location = new System.Drawing.Point(126, 158);
-            this.UploadPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UploadPhotoButton.Margin = new System.Windows.Forms.Padding(2);
             this.UploadPhotoButton.Name = "UploadPhotoButton";
             this.UploadPhotoButton.Size = new System.Drawing.Size(71, 20);
             this.UploadPhotoButton.TabIndex = 24;
@@ -145,7 +159,7 @@
             // OpenPhotoButton
             // 
             this.OpenPhotoButton.Location = new System.Drawing.Point(50, 158);
-            this.OpenPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenPhotoButton.Margin = new System.Windows.Forms.Padding(2);
             this.OpenPhotoButton.Name = "OpenPhotoButton";
             this.OpenPhotoButton.Size = new System.Drawing.Size(71, 20);
             this.OpenPhotoButton.TabIndex = 23;
@@ -160,7 +174,7 @@
             "Да, новое",
             "Нет, старое"});
             this.NewDayOutComboBox.Location = new System.Drawing.Point(94, 281);
-            this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.NewDayOutComboBox.Name = "NewDayOutComboBox";
             this.NewDayOutComboBox.Size = new System.Drawing.Size(72, 21);
             this.NewDayOutComboBox.TabIndex = 22;
@@ -168,7 +182,7 @@
             // BookNameTextBox
             // 
             this.BookNameTextBox.Location = new System.Drawing.Point(94, 32);
-            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.BookNameTextBox.Name = "BookNameTextBox";
             this.BookNameTextBox.Size = new System.Drawing.Size(72, 20);
             this.BookNameTextBox.TabIndex = 21;
@@ -176,7 +190,7 @@
             // GenreTextBox
             // 
             this.GenreTextBox.Location = new System.Drawing.Point(94, 128);
-            this.GenreTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GenreTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.GenreTextBox.Name = "GenreTextBox";
             this.GenreTextBox.Size = new System.Drawing.Size(72, 20);
             this.GenreTextBox.TabIndex = 20;
@@ -184,7 +198,7 @@
             // KeyWordsTextBox
             // 
             this.KeyWordsTextBox.Location = new System.Drawing.Point(94, 346);
-            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.KeyWordsTextBox.Name = "KeyWordsTextBox";
             this.KeyWordsTextBox.Size = new System.Drawing.Size(72, 20);
             this.KeyWordsTextBox.TabIndex = 18;
@@ -192,7 +206,7 @@
             // DescriptionTextBox
             // 
             this.DescriptionTextBox.Location = new System.Drawing.Point(94, 314);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(72, 20);
             this.DescriptionTextBox.TabIndex = 17;
@@ -200,7 +214,7 @@
             // CodeTextBox
             // 
             this.CodeTextBox.Location = new System.Drawing.Point(94, 193);
-            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CodeTextBox.Name = "CodeTextBox";
             this.CodeTextBox.Size = new System.Drawing.Size(72, 20);
             this.CodeTextBox.TabIndex = 16;
@@ -208,7 +222,7 @@
             // AmountTextBox
             // 
             this.AmountTextBox.Location = new System.Drawing.Point(94, 254);
-            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(72, 20);
             this.AmountTextBox.TabIndex = 14;
@@ -216,7 +230,7 @@
             // CostTextBox
             // 
             this.CostTextBox.Location = new System.Drawing.Point(94, 215);
-            this.CostTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CostTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.Size = new System.Drawing.Size(72, 20);
             this.CostTextBox.TabIndex = 13;
@@ -224,7 +238,7 @@
             // DayOutTextBox
             // 
             this.DayOutTextBox.Location = new System.Drawing.Point(103, 96);
-            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DayOutTextBox.Name = "DayOutTextBox";
             this.DayOutTextBox.Size = new System.Drawing.Size(72, 20);
             this.DayOutTextBox.TabIndex = 12;
@@ -332,7 +346,7 @@
             // AuthorTextBox
             // 
             this.AuthorTextBox.Location = new System.Drawing.Point(94, 67);
-            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AuthorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AuthorTextBox.Name = "AuthorTextBox";
             this.AuthorTextBox.Size = new System.Drawing.Size(72, 20);
             this.AuthorTextBox.TabIndex = 1;
@@ -352,9 +366,9 @@
             this.ReaderGroupBox.Controls.Add(this.FIOLabel);
             this.ReaderGroupBox.Controls.Add(this.FIOTextBox);
             this.ReaderGroupBox.Location = new System.Drawing.Point(272, 9);
-            this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ReaderGroupBox.Name = "ReaderGroupBox";
-            this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.ReaderGroupBox.Size = new System.Drawing.Size(325, 379);
             this.ReaderGroupBox.TabIndex = 4;
             this.ReaderGroupBox.TabStop = false;
@@ -374,7 +388,7 @@
             // FIOTextBox
             // 
             this.FIOTextBox.Location = new System.Drawing.Point(110, 32);
-            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FIOTextBox.Name = "FIOTextBox";
             this.FIOTextBox.Size = new System.Drawing.Size(72, 20);
             this.FIOTextBox.TabIndex = 2;
@@ -384,9 +398,9 @@
             this.MagazineGroupBox.Controls.Add(this.StatusLabel);
             this.MagazineGroupBox.Controls.Add(this.StatusTextBox);
             this.MagazineGroupBox.Location = new System.Drawing.Point(390, 22);
-            this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.MagazineGroupBox.Name = "MagazineGroupBox";
-            this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.MagazineGroupBox.Size = new System.Drawing.Size(325, 379);
             this.MagazineGroupBox.TabIndex = 5;
             this.MagazineGroupBox.TabStop = false;
@@ -406,25 +420,103 @@
             // StatusTextBox
             // 
             this.StatusTextBox.Location = new System.Drawing.Point(75, 32);
-            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.StatusTextBox.Name = "StatusTextBox";
             this.StatusTextBox.Size = new System.Drawing.Size(72, 20);
             this.StatusTextBox.TabIndex = 3;
+            // 
+            // LibraryListView
+            // 
+            this.LibraryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.BookName,
+            this.Author,
+            this.DayOut,
+            this.Genre,
+            this.Photo,
+            this.Code,
+            this.PublishName,
+            this.Price,
+            this.Amount,
+            this.IsNewDayOut,
+            this.Description,
+            this.KeyWords});
+            this.LibraryListView.HideSelection = false;
+            this.LibraryListView.Location = new System.Drawing.Point(202, 18);
+            this.LibraryListView.Name = "LibraryListView";
+            this.LibraryListView.Size = new System.Drawing.Size(374, 256);
+            this.LibraryListView.TabIndex = 3;
+            this.LibraryListView.UseCompatibleStateImageBehavior = false;
+            this.LibraryListView.View = System.Windows.Forms.View.Details;
+            // 
+            // BookName
+            // 
+            this.BookName.Text = "Назва книги";
+            // 
+            // Author
+            // 
+            this.Author.Text = "Автор";
+            // 
+            // DayOut
+            // 
+            this.DayOut.Text = "Рік видавництва";
+            // 
+            // Genre
+            // 
+            this.Genre.Text = "Жанр";
+            // 
+            // Photo
+            // 
+            this.Photo.Text = "Обкладинка";
+            // 
+            // Code
+            // 
+            this.Code.Text = "Код УДК";
+            // 
+            // Price
+            // 
+            this.Price.DisplayIndex = 6;
+            this.Price.Text = "Ціна";
+            // 
+            // Amount
+            // 
+            this.Amount.DisplayIndex = 7;
+            this.Amount.Text = "Кількість";
+            // 
+            // IsNewDayOut
+            // 
+            this.IsNewDayOut.DisplayIndex = 8;
+            this.IsNewDayOut.Text = "Нове видавництво";
+            // 
+            // Description
+            // 
+            this.Description.DisplayIndex = 9;
+            this.Description.Text = "Опис";
+            // 
+            // KeyWords
+            // 
+            this.KeyWords.DisplayIndex = 10;
+            this.KeyWords.Text = "Ключові слава";
+            // 
+            // PublishName
+            // 
+            this.PublishName.DisplayIndex = 11;
+            this.PublishName.Text = "Видавництво";
             // 
             // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 494);
+            this.ClientSize = new System.Drawing.Size(1003, 494);
+            this.Controls.Add(this.LibraryGroupBox);
             this.Controls.Add(this.MagazineGroupBox);
             this.Controls.Add(this.ReaderGroupBox);
-            this.Controls.Add(this.LibraryGroupBox);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Table";
             this.Text = "Table";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
             this.Load += new System.EventHandler(this.TableForm_Load);
             this.LibraryGroupBox.ResumeLayout(false);
             this.LibraryGroupBox.PerformLayout();
@@ -471,5 +563,18 @@
         private System.Windows.Forms.ComboBox NewDayOutComboBox;
         private System.Windows.Forms.Button UploadPhotoButton;
         private System.Windows.Forms.Button OpenPhotoButton;
+        private System.Windows.Forms.ListView LibraryListView;
+        private System.Windows.Forms.ColumnHeader BookName;
+        private System.Windows.Forms.ColumnHeader Author;
+        private System.Windows.Forms.ColumnHeader DayOut;
+        private System.Windows.Forms.ColumnHeader Genre;
+        private System.Windows.Forms.ColumnHeader Photo;
+        private System.Windows.Forms.ColumnHeader Code;
+        private System.Windows.Forms.ColumnHeader PublishName;
+        private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.ColumnHeader Amount;
+        private System.Windows.Forms.ColumnHeader IsNewDayOut;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.ColumnHeader KeyWords;
     }
 }
