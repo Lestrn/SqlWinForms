@@ -32,6 +32,8 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.LibraryGroupBox = new System.Windows.Forms.GroupBox();
+            this.PublishLabel = new System.Windows.Forms.Label();
+            this.PublishTextBox = new System.Windows.Forms.TextBox();
             this.UploadPhotoButton = new System.Windows.Forms.Button();
             this.LibraryListView = new System.Windows.Forms.ListView();
             this.BookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,17 +70,7 @@
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.AuthorTextBox = new System.Windows.Forms.TextBox();
             this.BookNameLabel = new System.Windows.Forms.Label();
-            this.ReaderGroupBox = new System.Windows.Forms.GroupBox();
-            this.FIOLabel = new System.Windows.Forms.Label();
-            this.FIOTextBox = new System.Windows.Forms.TextBox();
-            this.MagazineGroupBox = new System.Windows.Forms.GroupBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
-            this.StatusTextBox = new System.Windows.Forms.TextBox();
-            this.PublishTextBox = new System.Windows.Forms.TextBox();
-            this.PublishLabel = new System.Windows.Forms.Label();
             this.LibraryGroupBox.SuspendLayout();
-            this.ReaderGroupBox.SuspendLayout();
-            this.MagazineGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddButton
@@ -117,7 +109,6 @@
             this.LibraryGroupBox.Controls.Add(this.PublishLabel);
             this.LibraryGroupBox.Controls.Add(this.PublishTextBox);
             this.LibraryGroupBox.Controls.Add(this.UploadPhotoButton);
-            this.LibraryGroupBox.Controls.Add(this.LibraryListView);
             this.LibraryGroupBox.Controls.Add(this.OpenPhotoButton);
             this.LibraryGroupBox.Controls.Add(this.NewDayOutComboBox);
             this.LibraryGroupBox.Controls.Add(this.BookNameTextBox);
@@ -140,15 +131,31 @@
             this.LibraryGroupBox.Controls.Add(this.AuthorLabel);
             this.LibraryGroupBox.Controls.Add(this.AuthorTextBox);
             this.LibraryGroupBox.Controls.Add(this.BookNameLabel);
-            this.LibraryGroupBox.Location = new System.Drawing.Point(61, 22);
+            this.LibraryGroupBox.Location = new System.Drawing.Point(22, 11);
             this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
             this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.LibraryGroupBox.Size = new System.Drawing.Size(604, 379);
+            this.LibraryGroupBox.Size = new System.Drawing.Size(346, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
             this.LibraryGroupBox.Text = "Библиотека";
             this.LibraryGroupBox.Visible = false;
+            // 
+            // PublishLabel
+            // 
+            this.PublishLabel.AutoSize = true;
+            this.PublishLabel.Location = new System.Drawing.Point(-3, 236);
+            this.PublishLabel.Name = "PublishLabel";
+            this.PublishLabel.Size = new System.Drawing.Size(73, 13);
+            this.PublishLabel.TabIndex = 6;
+            this.PublishLabel.Text = "Видавництво";
+            // 
+            // PublishTextBox
+            // 
+            this.PublishTextBox.Location = new System.Drawing.Point(81, 229);
+            this.PublishTextBox.Name = "PublishTextBox";
+            this.PublishTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PublishTextBox.TabIndex = 6;
             // 
             // UploadPhotoButton
             // 
@@ -177,7 +184,7 @@
             this.Description,
             this.KeyWords});
             this.LibraryListView.HideSelection = false;
-            this.LibraryListView.Location = new System.Drawing.Point(202, 18);
+            this.LibraryListView.Location = new System.Drawing.Point(373, 22);
             this.LibraryListView.Name = "LibraryListView";
             this.LibraryListView.Size = new System.Drawing.Size(369, 256);
             this.LibraryListView.TabIndex = 3;
@@ -444,108 +451,23 @@
             this.BookNameLabel.TabIndex = 0;
             this.BookNameLabel.Text = "Название книги";
             // 
-            // ReaderGroupBox
-            // 
-            this.ReaderGroupBox.Controls.Add(this.FIOLabel);
-            this.ReaderGroupBox.Controls.Add(this.FIOTextBox);
-            this.ReaderGroupBox.Location = new System.Drawing.Point(272, 9);
-            this.ReaderGroupBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ReaderGroupBox.Name = "ReaderGroupBox";
-            this.ReaderGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.ReaderGroupBox.Size = new System.Drawing.Size(325, 379);
-            this.ReaderGroupBox.TabIndex = 4;
-            this.ReaderGroupBox.TabStop = false;
-            this.ReaderGroupBox.Text = "Читатель";
-            this.ReaderGroupBox.Visible = false;
-            // 
-            // FIOLabel
-            // 
-            this.FIOLabel.AutoSize = true;
-            this.FIOLabel.Location = new System.Drawing.Point(4, 34);
-            this.FIOLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.FIOLabel.Name = "FIOLabel";
-            this.FIOLabel.Size = new System.Drawing.Size(40, 13);
-            this.FIOLabel.TabIndex = 2;
-            this.FIOLabel.Text = "ФИО: ";
-            // 
-            // FIOTextBox
-            // 
-            this.FIOTextBox.Location = new System.Drawing.Point(110, 32);
-            this.FIOTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.FIOTextBox.Name = "FIOTextBox";
-            this.FIOTextBox.Size = new System.Drawing.Size(72, 20);
-            this.FIOTextBox.TabIndex = 2;
-            // 
-            // MagazineGroupBox
-            // 
-            this.MagazineGroupBox.Controls.Add(this.StatusLabel);
-            this.MagazineGroupBox.Controls.Add(this.StatusTextBox);
-            this.MagazineGroupBox.Location = new System.Drawing.Point(390, 22);
-            this.MagazineGroupBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MagazineGroupBox.Name = "MagazineGroupBox";
-            this.MagazineGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.MagazineGroupBox.Size = new System.Drawing.Size(325, 379);
-            this.MagazineGroupBox.TabIndex = 5;
-            this.MagazineGroupBox.TabStop = false;
-            this.MagazineGroupBox.Text = "Журнал";
-            this.MagazineGroupBox.Visible = false;
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(4, 32);
-            this.StatusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(47, 13);
-            this.StatusLabel.TabIndex = 4;
-            this.StatusLabel.Text = "Статус: ";
-            // 
-            // StatusTextBox
-            // 
-            this.StatusTextBox.Location = new System.Drawing.Point(75, 32);
-            this.StatusTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.StatusTextBox.Name = "StatusTextBox";
-            this.StatusTextBox.Size = new System.Drawing.Size(72, 20);
-            this.StatusTextBox.TabIndex = 3;
-            // 
-            // PublishTextBox
-            // 
-            this.PublishTextBox.Location = new System.Drawing.Point(81, 229);
-            this.PublishTextBox.Name = "PublishTextBox";
-            this.PublishTextBox.Size = new System.Drawing.Size(100, 20);
-            this.PublishTextBox.TabIndex = 6;
-            // 
-            // PublishLabel
-            // 
-            this.PublishLabel.AutoSize = true;
-            this.PublishLabel.Location = new System.Drawing.Point(-3, 236);
-            this.PublishLabel.Name = "PublishLabel";
-            this.PublishLabel.Size = new System.Drawing.Size(73, 13);
-            this.PublishLabel.TabIndex = 6;
-            this.PublishLabel.Text = "Видавництво";
-            // 
-            // Table
+            // LibraryTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 494);
             this.Controls.Add(this.LibraryGroupBox);
-            this.Controls.Add(this.MagazineGroupBox);
-            this.Controls.Add(this.ReaderGroupBox);
+            this.Controls.Add(this.LibraryListView);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Table";
-            this.Text = "Table";
+            this.Name = "LibraryTable";
+            this.Text = "LibraryTable";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
             this.Load += new System.EventHandler(this.TableForm_Load);
             this.LibraryGroupBox.ResumeLayout(false);
             this.LibraryGroupBox.PerformLayout();
-            this.ReaderGroupBox.ResumeLayout(false);
-            this.ReaderGroupBox.PerformLayout();
-            this.MagazineGroupBox.ResumeLayout(false);
-            this.MagazineGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -556,14 +478,8 @@
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.GroupBox LibraryGroupBox;
-        private System.Windows.Forms.GroupBox ReaderGroupBox;
-        private System.Windows.Forms.GroupBox MagazineGroupBox;
         private System.Windows.Forms.TextBox AuthorTextBox;
         private System.Windows.Forms.Label BookNameLabel;
-        private System.Windows.Forms.TextBox FIOTextBox;
-        private System.Windows.Forms.TextBox StatusTextBox;
-        private System.Windows.Forms.Label FIOLabel;
-        private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.TextBox BookNameTextBox;
         private System.Windows.Forms.TextBox GenreTextBox;
         private System.Windows.Forms.TextBox KeyWordsTextBox;
