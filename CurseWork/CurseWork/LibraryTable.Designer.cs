@@ -267,8 +267,8 @@
             // 
             this.NewDayOutComboBox.FormattingEnabled = true;
             this.NewDayOutComboBox.Items.AddRange(new object[] {
-            "Да, новое",
-            "Нет, старое"});
+            "Так",
+            "Ні"});
             this.NewDayOutComboBox.Location = new System.Drawing.Point(94, 281);
             this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewDayOutComboBox.Name = "NewDayOutComboBox";

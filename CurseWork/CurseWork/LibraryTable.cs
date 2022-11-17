@@ -157,6 +157,15 @@ namespace CurseWork
                         }
                     }
                 }
+
+                for (int i = 0; i < NewDayOutComboBox.Items.Count; i++)
+                {
+                    if (NewDayOutComboBox.Items[i].ToString() == listView.SubItems[9].Text)
+                    {
+                        NewDayOutComboBox.SelectedIndex = i;
+                        break;
+                    }
+                }
             }
             catch { }
         }
