@@ -14,8 +14,6 @@ namespace CurseWork
     public partial class ReadersTable : Form
     {
         private OleDbConnection _dbConnection;
-        private bool _isSelected = false;
-        private ListView.SelectedListViewItemCollection _currentSelected;
 
         public ReadersTable()
         {
@@ -55,8 +53,6 @@ namespace CurseWork
 
         private void SelectedItem(object sender, EventArgs e)
         {
-
-            _currentSelected = ReadersListView.SelectedItems;
             try
             {
                 var listView = ReadersListView.SelectedItems[0];
@@ -73,6 +69,7 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(ForAddTextBox.Text))
             {
                 Add();
+                LoaderForReaders();
             }
             else
             {

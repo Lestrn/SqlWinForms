@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.ReaderGroupBox = new System.Windows.Forms.GroupBox();
+            this.ForAddTextBox = new System.Windows.Forms.TextBox();
+            this.NumberReaderComboBox = new System.Windows.Forms.ComboBox();
+            this.PhoneTextBox = new System.Windows.Forms.TextBox();
+            this.AdressTextBox = new System.Windows.Forms.TextBox();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.AdressLabel = new System.Windows.Forms.Label();
             this.NumberReaderLabel = new System.Windows.Forms.Label();
             this.FIOLabel = new System.Windows.Forms.Label();
             this.FIOTextBox = new System.Windows.Forms.TextBox();
-            this.AdressTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.ReadersListView = new System.Windows.Forms.ListView();
             this.NumberColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PIBColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,13 +46,13 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
-            this.NumberReaderComboBox = new System.Windows.Forms.ComboBox();
-            this.ForAddTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ReaderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReaderGroupBox
             // 
+            this.ReaderGroupBox.Controls.Add(this.label1);
             this.ReaderGroupBox.Controls.Add(this.ForAddTextBox);
             this.ReaderGroupBox.Controls.Add(this.NumberReaderComboBox);
             this.ReaderGroupBox.Controls.Add(this.PhoneTextBox);
@@ -68,6 +70,38 @@
             this.ReaderGroupBox.TabIndex = 5;
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
+            // 
+            // ForAddTextBox
+            // 
+            this.ForAddTextBox.Location = new System.Drawing.Point(212, 54);
+            this.ForAddTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ForAddTextBox.Name = "ForAddTextBox";
+            this.ForAddTextBox.Size = new System.Drawing.Size(95, 22);
+            this.ForAddTextBox.TabIndex = 11;
+            // 
+            // NumberReaderComboBox
+            // 
+            this.NumberReaderComboBox.FormattingEnabled = true;
+            this.NumberReaderComboBox.Location = new System.Drawing.Point(212, 25);
+            this.NumberReaderComboBox.Name = "NumberReaderComboBox";
+            this.NumberReaderComboBox.Size = new System.Drawing.Size(121, 24);
+            this.NumberReaderComboBox.TabIndex = 10;
+            // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Location = new System.Drawing.Point(142, 198);
+            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(95, 22);
+            this.PhoneTextBox.TabIndex = 7;
+            // 
+            // AdressTextBox
+            // 
+            this.AdressTextBox.Location = new System.Drawing.Point(142, 125);
+            this.AdressTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AdressTextBox.Name = "AdressTextBox";
+            this.AdressTextBox.Size = new System.Drawing.Size(95, 22);
+            this.AdressTextBox.TabIndex = 6;
             // 
             // PhoneLabel
             // 
@@ -113,22 +147,6 @@
             this.FIOTextBox.Size = new System.Drawing.Size(95, 22);
             this.FIOTextBox.TabIndex = 2;
             // 
-            // AdressTextBox
-            // 
-            this.AdressTextBox.Location = new System.Drawing.Point(142, 125);
-            this.AdressTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdressTextBox.Name = "AdressTextBox";
-            this.AdressTextBox.Size = new System.Drawing.Size(95, 22);
-            this.AdressTextBox.TabIndex = 6;
-            // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(142, 198);
-            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(95, 22);
-            this.PhoneTextBox.TabIndex = 7;
-            // 
             // ReadersListView
             // 
             this.ReadersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -144,6 +162,22 @@
             this.ReadersListView.UseCompatibleStateImageBehavior = false;
             this.ReadersListView.View = System.Windows.Forms.View.Details;
             this.ReadersListView.SelectedIndexChanged += new System.EventHandler(this.SelectedItem);
+            // 
+            // NumberColumn
+            // 
+            this.NumberColumn.Text = "Номер читацького квитка";
+            // 
+            // PIBColumn
+            // 
+            this.PIBColumn.Text = "ПІБ Читача";
+            // 
+            // AddressColumn
+            // 
+            this.AddressColumn.Text = "Адреса";
+            // 
+            // PhoneColumn
+            // 
+            this.PhoneColumn.Text = "Телефон";
             // 
             // AddButton
             // 
@@ -175,21 +209,14 @@
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
-            // NumberReaderComboBox
+            // label1
             // 
-            this.NumberReaderComboBox.FormattingEnabled = true;
-            this.NumberReaderComboBox.Location = new System.Drawing.Point(212, 25);
-            this.NumberReaderComboBox.Name = "NumberReaderComboBox";
-            this.NumberReaderComboBox.Size = new System.Drawing.Size(121, 24);
-            this.NumberReaderComboBox.TabIndex = 10;
-            // 
-            // ForAddTextBox
-            // 
-            this.ForAddTextBox.Location = new System.Drawing.Point(212, 54);
-            this.ForAddTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ForAddTextBox.Name = "ForAddTextBox";
-            this.ForAddTextBox.Size = new System.Drawing.Size(95, 22);
-            this.ForAddTextBox.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Для добавления";
             // 
             // ReadersTable
             // 
@@ -230,5 +257,6 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.ComboBox NumberReaderComboBox;
         private System.Windows.Forms.TextBox ForAddTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }
