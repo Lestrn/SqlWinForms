@@ -78,7 +78,7 @@ namespace CurseWork
         }
         public void Add()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES({ForAddTextBox.Text}, {FIOTextBox.Text}, {AdressTextBox.Text}, {PhoneTextBox.Text})", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES(\"{ForAddTextBox.Text}\", \"{FIOTextBox.Text}\", \"{AdressTextBox.Text}\", \"{PhoneTextBox.Text}\")", _dbConnection);
             oleDbCommand.ExecuteNonQuery();
         }
 
