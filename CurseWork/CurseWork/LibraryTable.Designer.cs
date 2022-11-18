@@ -66,10 +66,10 @@
             this.UploadPhotoButton = new System.Windows.Forms.Button();
             this.PublishLabel = new System.Windows.Forms.Label();
             this.LibraryGroupBox = new System.Windows.Forms.GroupBox();
+            this.GenresComboBox = new System.Windows.Forms.ComboBox();
             this.PublishComboBox = new System.Windows.Forms.ComboBox();
             this.CodeUDKComboBox = new System.Windows.Forms.ComboBox();
             this.AuthorComboBox = new System.Windows.Forms.ComboBox();
-            this.GenresComboBox = new System.Windows.Forms.ComboBox();
             this.LibraryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.AddButton.TabIndex = 0;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // RemoveButton
             // 
@@ -422,6 +423,14 @@
             this.LibraryGroupBox.Text = "Библиотека";
             this.LibraryGroupBox.Visible = false;
             // 
+            // GenresComboBox
+            // 
+            this.GenresComboBox.FormattingEnabled = true;
+            this.GenresComboBox.Location = new System.Drawing.Point(388, 328);
+            this.GenresComboBox.Name = "GenresComboBox";
+            this.GenresComboBox.Size = new System.Drawing.Size(121, 21);
+            this.GenresComboBox.TabIndex = 28;
+            // 
             // PublishComboBox
             // 
             this.PublishComboBox.FormattingEnabled = true;
@@ -445,14 +454,6 @@
             this.AuthorComboBox.Name = "AuthorComboBox";
             this.AuthorComboBox.Size = new System.Drawing.Size(121, 21);
             this.AuthorComboBox.TabIndex = 25;
-            // 
-            // GenresComboBox
-            // 
-            this.GenresComboBox.FormattingEnabled = true;
-            this.GenresComboBox.Location = new System.Drawing.Point(388, 328);
-            this.GenresComboBox.Name = "GenresComboBox";
-            this.GenresComboBox.Size = new System.Drawing.Size(121, 21);
-            this.GenresComboBox.TabIndex = 28;
             // 
             // LibraryTable
             // 

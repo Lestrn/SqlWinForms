@@ -208,5 +208,12 @@ namespace CurseWork
             command.ExecuteNonQuery();
             LibraryLoader();
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            OleDbCommand command = new OleDbCommand($"INSERT INTO Бібліотека VALUES(\"{BookNameTextBox.Text}\", {int.Parse(AuthorComboBox.Text)}, {int.Parse(DayOutTextBox.Text)}, {int.Parse(GenresComboBox.Text)}, \"{Img64BaseString}\", \"{CodeUDKComboBox.Text}\", {int.Parse(PublishComboBox.Text)}, {decimal.Parse(CostTextBox.Text)}, {int.Parse(AmountTextBox.Text)}, \"{NewDayOutComboBox.Text}\", \"{DescriptionTextBox.Text}\", \"{KeyWordsTextBox.Text}\")", _dbConnection);
+            command.ExecuteNonQuery();
+            LibraryLoader();
+        }
     }
 }
