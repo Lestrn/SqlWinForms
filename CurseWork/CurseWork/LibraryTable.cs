@@ -21,22 +21,9 @@ namespace CurseWork
 
         private void TableForm_Load(object sender, System.EventArgs e)
         {
+            LibraryLoader();
             OleDbCommand command = new OleDbCommand("SELECT * FROM Бібліотека", _dbConnection); ;
             OleDbDataReader reader = command.ExecuteReader();
-            LibraryGroupBox.Visible = true;
-            LibraryListView.FullRowSelect = true;
-            while (reader.Read())
-            {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = reader.GetString(0);
-                for (int j = 1; j <= 11; j++)
-                {
-                    listViewItem.SubItems.Add(reader.GetValue(j).ToString());
-                }
-
-                LibraryListView.Items.Add(listViewItem);
-            }
-            reader.Close();
             command = new OleDbCommand("SELECT Код_автора FROM Автори", _dbConnection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -67,6 +54,27 @@ namespace CurseWork
             while (reader.Read())
             {
                 GenresComboBox.Items.Add(reader.GetValue(0));
+            }
+            reader.Close();
+        }
+
+        private void LibraryLoader()
+        {
+            LibraryListView.Items.Clear();
+            OleDbCommand command = new OleDbCommand("SELECT * FROM Бібліотека", _dbConnection); ;
+            OleDbDataReader reader = command.ExecuteReader();
+            LibraryGroupBox.Visible = true;
+            LibraryListView.FullRowSelect = true;
+            while (reader.Read())
+            {
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.Text = reader.GetString(0);
+                for (int j = 1; j <= 11; j++)
+                {
+                    listViewItem.SubItems.Add(reader.GetValue(j).ToString());
+                }
+
+                LibraryListView.Items.Add(listViewItem);
             }
             reader.Close();
         }
@@ -172,13 +180,13 @@ namespace CurseWork
             //Назва_книги ={ BookNameTextBox.Text}, Код_автора_книги ={ int.Parse(AuthorComboBox.Text)}, Рік_видання ={ int.Parse(DayOutTextBox.Text)}, Код_жанру ={ int.Parse(GenresComboBox.Text)}, Обкладинка ={ Img64BaseString}, Код_УДК ={ CodeUDKComboBox.Text}, Код_видавництва ={ int.Parse(PublishComboBox.Text)}, Ціна ={ decimal.Parse(CostTextBox.Text)}, Кількість_у_бібліотеці ={ int.Parse(AmountTextBox.Text)}, Чи_є_новим_виданням ={ NewDayOutComboBox.Text}, Ключові_слова ={ KeyWordsTextBox.Text}
             //WHERE Назва = { BookNameTextBox.Text } Примітки_коротка_анотація ={ DescriptionTextBox.Text}
             //$"UPDATE Бібліотека SET Назва_книги=\'{ BookNameTextBox.Text}\', Код_автора_книги={ int.Parse(AuthorComboBox.Text)}, Рік_видання={ int.Parse(DayOutTextBox.Text)}, Код_жанру={ int.Parse(GenresComboBox.Text)}, Обкладинка=\'{Img64BaseString}\', Код_УДК=\'{ CodeUDKComboBox.Text}\', Код_видавництва={ int.Parse(PublishComboBox.Text)}, Ціна={ decimal.Parse(CostTextBox.Text)}, Кількість_у_бібліотеці={ int.Parse(AmountTextBox.Text)}, Чи_є_новим_виданням=\'{ NewDayOutComboBox.Text}\', Ключові_слова={ KeyWordsTextBox.Text}, Примітки_коротка_анотація={ DescriptionTextBox.Text} WHERE Назва_книги=\'{BookNameTextBox.Text}\'"
-            OleDbCommand command = new OleDbCommand("UPDATE Бібліотека SET Назва_книги=\'" + BookNameTextBox.Text + "\', " +
-                "Код_автора_книги=" + int.Parse(AuthorComboBox.Text) + ", " +
-                "Рік_видання=" + int.Parse(DayOutTextBox.Text) + ", " +
-                "Примітки_коротка_анотація=\'" + DescriptionTextBox.Text + "\' " +
-                "Ключові_слова=\'" + KeyWordsTextBox.Text + "\' " +
-                "WHERE Назва_книги=\'" + BookNameTextBox.Text + "\'", _dbConnection);
-            command.ExecuteNonQuery();
+            //OleDbCommand command = new OleDbCommand("UPDATE Бібліотека SET Назва_книги=\'" + BookNameTextBox.Text + "\', " +
+            //    "Код_автора_книги=" + int.Parse(AuthorComboBox.Text) + ", " +
+            //    "Рік_видання=" + int.Parse(DayOutTextBox.Text) + ", " +
+            //    "Примітки_коротка_анотація=" + DescriptionTextBox.Text + ", " +
+            //    "Ключові_слова=" + KeyWordsTextBox.Text + " " +
+            //    "WHERE Назва_книги=\'" + BookNameTextBox.Text + "\'", _dbConnection);
+            //command.ExecuteNonQuery();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -191,6 +199,7 @@ namespace CurseWork
 
             OleDbCommand command = new OleDbCommand($"DELETE FROM Бібліотека WHERE Назва_книги=\'{BookNameTextBox.Text}\'", _dbConnection);
             command.ExecuteNonQuery();
+            LibraryLoader();
         }
     }
 }
