@@ -32,13 +32,14 @@ namespace CurseWork
         {
             try
             {
-                var listView = ReadersListView.SelectedItems[0];
-                NumberReaderComboBox.Text = listView.SubItems[0].Text;
+                var listView = ReadersListView.SelectedItems[0];              
                 FIOTextBox.Text = listView.SubItems[1].Text;
                 AdressTextBox.Text = listView.SubItems[2].Text;
                 PhoneTextBox.Text = listView.SubItems[3].Text;
+                FormService.SelectRowInComboBox(NumberReaderComboBox, listView.SubItems[0].Text);
             }
             catch { }
+           
         }
 
         public void AddButton_Click(object sender, EventArgs e)
