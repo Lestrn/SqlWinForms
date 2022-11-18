@@ -64,12 +64,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnValue.cs" />
     <Compile Include="DataBaseController.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataBaseController.Designer.cs">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="ITableDatabase.cs" />
     <Compile Include="MagazineTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +112,7 @@
     <Compile Include="LibraryTable.Designer.cs">
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormService.cs" />
     <EmbeddedResource Include="DataBaseController.resx">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </EmbeddedResource>

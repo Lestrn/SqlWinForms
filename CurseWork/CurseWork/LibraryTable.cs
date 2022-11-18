@@ -6,77 +6,28 @@ using System.Windows.Forms;
 
 namespace CurseWork
 {
-    public partial class LibraryTable : Form
+    public partial class LibraryTable : Form, ITableDatabase
     {
-        private OleDbConnection _dbConnection;
-
         public LibraryTable()
         {
             InitializeComponent();
-            _dbConnection = new OleDbConnection(DataBaseController.DatabaseConnection);
-            _dbConnection.Open();
+            DbConnection = new OleDbConnection(DataBaseController.DatabaseConnection);
+            DbConnection.Open();
         }
 
         public string Img64BaseString { get; set; }
 
-        private void TableForm_Load(object sender, System.EventArgs e)
+        public OleDbConnection DbConnection { get; }
+
+        public void TableForm_Load(object sender, System.EventArgs e)
         {
-            LibraryLoader();
-            OleDbCommand command = new OleDbCommand("SELECT * FROM Бібліотека", _dbConnection); ;
-            OleDbDataReader reader = command.ExecuteReader();
-            command = new OleDbCommand("SELECT Код_автора FROM Автори", _dbConnection);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                AuthorComboBox.Items.Add(reader.GetValue(0));
-            }
-
-            reader.Close();
-
-            command = new OleDbCommand("SELECT Код_УДК FROM Журнал", _dbConnection);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                CodeUDKComboBox.Items.Add(reader.GetValue(0));
-            }
-            reader.Close();
-
-            command = new OleDbCommand("SELECT Код FROM Видавництво", _dbConnection);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                PublishComboBox.Items.Add(reader.GetValue(0));
-            }
-            reader.Close();
-
-            command = new OleDbCommand("SELECT Код_жанра FROM Жанри", _dbConnection);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                GenresComboBox.Items.Add(reader.GetValue(0));
-            }
-            reader.Close();
-        }
-
-        private void LibraryLoader()
-        {
-            LibraryListView.Items.Clear();
-            OleDbCommand command = new OleDbCommand("SELECT * FROM Бібліотека", _dbConnection); ;
-            OleDbDataReader reader = command.ExecuteReader();
             LibraryGroupBox.Visible = true;
             LibraryListView.FullRowSelect = true;
-            while (reader.Read())
-            {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = reader.GetString(0);
-                for (int j = 1; j <= 11; j++)
-                {
-                    listViewItem.SubItems.Add(reader.GetValue(j).ToString());
-                }
-
-                LibraryListView.Items.Add(listViewItem);
-            }
-            reader.Close();
+            FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
+            FormService.LoadComboBoxFromDB(AuthorComboBox, DbConnection, "SELECT Код_автора FROM Автори");
+            FormService.LoadComboBoxFromDB(CodeUDKComboBox, DbConnection, "SELECT Код_УДК FROM Журнал");
+            FormService.LoadComboBoxFromDB(PublishComboBox, DbConnection, "SELECT Код FROM Видавництво");
+            FormService.LoadComboBoxFromDB(GenresComboBox, DbConnection, "SELECT Код_жанра FROM Жанри");
         }
 
         private void UploadPhotoButton_Click(object sender, System.EventArgs e)
@@ -105,12 +56,12 @@ namespace CurseWork
             imgForm.ShowDialog();
         }
         
-        private void Table_Closed(object sender, FormClosedEventArgs e)
+        public void Table_Closed(object sender, FormClosedEventArgs e)
         {
-            _dbConnection.Close();
+            DbConnection.Close();
         }
 
-        private void LibraryListViewItem_Selected(object sender, EventArgs e)
+        public void TableListViewItem_Selected(object sender, EventArgs e)
         {
             try
             {
@@ -122,55 +73,16 @@ namespace CurseWork
                 DescriptionTextBox.Text = listView.SubItems[10].Text;
                 KeyWordsTextBox.Text = listView.SubItems[11].Text;
                 Img64BaseString = listView.SubItems[4].Text;
-                for (int i = 0; i < AuthorComboBox.Items.Count; i++)
-                {
-                    if (AuthorComboBox.Items[i].ToString() == listView.SubItems[1].Text)
-                    {
-                        AuthorComboBox.SelectedIndex = i;
-                        break;
-                    }
-                }
-
-                for (int i = 0; i < CodeUDKComboBox.Items.Count; i++)
-                {
-                    if (CodeUDKComboBox.Items[i].ToString() == listView.SubItems[5].Text)
-                    {
-                        CodeUDKComboBox.SelectedIndex = i;
-                        break;
-                    }
-                }
-
-                for (int i = 0; i < PublishComboBox.Items.Count; i++)
-                {
-                    if (PublishComboBox.Items[i].ToString() == listView.SubItems[6].Text)
-                    {
-                        PublishComboBox.SelectedIndex = i;
-                        break;
-                    }
-                }
-
-                for (int i = 0; i < GenresComboBox.Items.Count; i++)
-                {
-                    if (GenresComboBox.Items[i].ToString() == listView.SubItems[3].Text)
-                    {
-                        GenresComboBox.SelectedIndex = i;
-                        break;
-                    }
-                }
-
-                for (int i = 0; i < NewDayOutComboBox.Items.Count; i++)
-                {
-                    if (NewDayOutComboBox.Items[i].ToString() == listView.SubItems[9].Text)
-                    {
-                        NewDayOutComboBox.SelectedIndex = i;
-                        break;
-                    }
-                }
+                FormService.SelectRowInComboBox(AuthorComboBox, listView.SubItems[1].Text);
+                FormService.SelectRowInComboBox(CodeUDKComboBox, listView.SubItems[5].Text);
+                FormService.SelectRowInComboBox(PublishComboBox, listView.SubItems[6].Text);
+                FormService.SelectRowInComboBox(GenresComboBox, listView.SubItems[3].Text);
+                FormService.SelectRowInComboBox(NewDayOutComboBox, listView.SubItems[9].Text);
             }
             catch { }
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
+        public void EditButton_Click(object sender, EventArgs e)
         {
             if (LibraryListView.SelectedItems.Count == 0)
             {
@@ -178,25 +90,27 @@ namespace CurseWork
                 return;
             }
 
-            OleDbCommand command = new OleDbCommand("UPDATE Бібліотека SET " +
-                "Назва_книги=\"" + BookNameTextBox.Text + "\", " +
-                "Код_автора_книги=" + int.Parse(AuthorComboBox.Text) + ", " +
-                "Рік_видання=" + int.Parse(DayOutTextBox.Text) + ", " +
-                "Код_жанру=" + int.Parse(GenresComboBox.Text) + ", " +
-                "Обкладинка=\"" + Img64BaseString + "\", " +
-                "Код_УДК=\"" + CodeUDKComboBox.Text + "\", " +
-                "Код_видавництва=" + int.Parse(PublishComboBox.Text) + ", " + 
-                "Ціна=" + decimal.Parse(CostTextBox.Text) + ", " + 
-                "Кількість_у_бібліотеці=" + int.Parse(AmountTextBox.Text) +", " + 
-                "Чи_є_новим_виданням=\"" + NewDayOutComboBox.Text + "\", " +
-                "Примітки_коротка_анотація=\"" + DescriptionTextBox.Text + "\", " +
-                "Ключові_слова=\"" + KeyWordsTextBox.Text + "\" " +
-                "WHERE Назва_книги=\"" + BookNameTextBox.Text + "\"", _dbConnection);
+            var updateQuery = DatabaseHelper.UpdateRecordSqlQuery("Бібліотека", new ColumnValue("Назва_книги", "string", BookNameTextBox.Text), new ColumnValue[]
+            {
+                new ColumnValue("Назва_книги", "string", BookNameTextBox.Text),
+                new ColumnValue("Код_автора_книги", "int", AuthorComboBox.Text),
+                new ColumnValue("Рік_видання", "int", DayOutTextBox.Text),
+                new ColumnValue("Код_жанру", "int", GenresComboBox.Text),
+                new ColumnValue("Обкладинка", "string", Img64BaseString),
+                new ColumnValue("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValue("Код_видавництва", "int", PublishComboBox.Text),
+                new ColumnValue("Ціна", "decimal", CostTextBox.Text),
+                new ColumnValue("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
+                new ColumnValue("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
+                new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
+                new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
+            });
+            OleDbCommand command = new OleDbCommand(updateQuery, DbConnection);
             command.ExecuteNonQuery();
-            LibraryLoader();
+            FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
+        public void RemoveButton_Click(object sender, EventArgs e)
         {
             if (LibraryListView.SelectedItems.Count == 0)
             {
@@ -204,16 +118,33 @@ namespace CurseWork
                 return;
             }
 
-            OleDbCommand command = new OleDbCommand($"DELETE FROM Бібліотека WHERE Назва_книги=\'{BookNameTextBox.Text}\'", _dbConnection);
+            var deleteQuery = DatabaseHelper.DeleteRecordSqlQuery("Бібліотека", new ColumnValue("Назва_книги", "string", BookNameTextBox.Text));
+            MessageBox.Show(deleteQuery, "Error", MessageBoxButtons.OK);
+            OleDbCommand command = new OleDbCommand(deleteQuery, DbConnection);
             command.ExecuteNonQuery();
-            LibraryLoader();
+            FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        public void AddButton_Click(object sender, EventArgs e)
         {
-            OleDbCommand command = new OleDbCommand($"INSERT INTO Бібліотека VALUES(\"{BookNameTextBox.Text}\", {int.Parse(AuthorComboBox.Text)}, {int.Parse(DayOutTextBox.Text)}, {int.Parse(GenresComboBox.Text)}, \"{Img64BaseString}\", \"{CodeUDKComboBox.Text}\", {int.Parse(PublishComboBox.Text)}, {decimal.Parse(CostTextBox.Text)}, {int.Parse(AmountTextBox.Text)}, \"{NewDayOutComboBox.Text}\", \"{DescriptionTextBox.Text}\", \"{KeyWordsTextBox.Text}\")", _dbConnection);
+            var createQuery = DatabaseHelper.CreateRecordSqlQuerry("Бібліотека", new ColumnValue[]
+            {
+                new ColumnValue("Назва_книги", "string", BookNameTextBox.Text),
+                new ColumnValue("Код_автора_книги", "int", AuthorComboBox.Text),
+                new ColumnValue("Рік_видання", "int", DayOutTextBox.Text),
+                new ColumnValue("Код_жанру", "int", GenresComboBox.Text),
+                new ColumnValue("Обкладинка", "string", Img64BaseString),
+                new ColumnValue("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValue("Код_видавництва", "int", PublishComboBox.Text),
+                new ColumnValue("Ціна", "decimal", CostTextBox.Text),
+                new ColumnValue("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
+                new ColumnValue("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
+                new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
+                new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
+            });
+            OleDbCommand command = new OleDbCommand(createQuery, DbConnection);
             command.ExecuteNonQuery();
-            LibraryLoader();
+            FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
     }
 }

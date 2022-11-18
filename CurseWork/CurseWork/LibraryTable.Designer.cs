@@ -309,7 +309,7 @@
             this.LibraryListView.TabIndex = 3;
             this.LibraryListView.UseCompatibleStateImageBehavior = false;
             this.LibraryListView.View = System.Windows.Forms.View.Details;
-            this.LibraryListView.SelectedIndexChanged += new System.EventHandler(this.LibraryListViewItem_Selected);
+            this.LibraryListView.SelectedIndexChanged += new System.EventHandler(this.TableListViewItem_Selected);
             // 
             // BookName
             // 
