@@ -63,7 +63,7 @@ namespace CurseWork
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(AddNumberReaderTextBox.Text))
+            if (!string.IsNullOrEmpty(AddNumberReaderTextBox.Text))
             {
                 Add();
                 LoaderForMagazine();
@@ -75,7 +75,7 @@ namespace CurseWork
         }
         private void Add()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Журнал (Код_УДК, Статус, Номер_читацького_квитка) VALUES({CodeNumberTextBox.Text}, {StatusTextBox.Text}, {AddNumberReaderTextBox.Text}");
+            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Журнал (Код_УДК, Статус, Номер_читацького_квитка) VALUES(\"{CodeNumberTextBox.Text}\", \"{StatusTextBox.Text}\", \"{AddNumberReaderTextBox.Text}\"");
             oleDbCommand.ExecuteNonQuery();
         }
 
@@ -93,7 +93,7 @@ namespace CurseWork
         }
         private void Edit()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Журнал SET  Код_УДК=\'{CodeNumberTextBox.Text}\',  Статус=\'{StatusTextBox.Text}\' Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'  WHERE Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Журнал SET  Код_УДК=\"{CodeNumberTextBox.Text}\",  Статус=\"{StatusTextBox.Text}\" Номер_читацького_квитка=\"{NumberReaderComboBox.Text}\"  WHERE Номер_читацького_квитка=\"{NumberReaderComboBox.Text}\"", _dbConnection);
             oleDbCommand.ExecuteNonQuery();
         }
         private void DeleteButton_Click(object sender, EventArgs e)
