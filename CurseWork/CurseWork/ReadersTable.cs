@@ -27,11 +27,11 @@ namespace CurseWork
 
         private void LoaderForReaders()
         {
+            ReadersListView.Items.Clear();
             OleDbCommand command;
             OleDbDataReader reader;
             command = new OleDbCommand("SELECT * FROM Читачі", _dbConnection);
             reader = command.ExecuteReader();
-            ReadersListView.Clear();
             ReadersListView.FullRowSelect = true;
             while (reader.Read())
             {
@@ -99,7 +99,7 @@ namespace CurseWork
         }
         public void Delete()
         {
-            OleDbCommand command = new OleDbCommand($"DELETE FROM Бібліотека WHERE Назва='{NumberReaderComboBox.Text}'", _dbConnection);
+            OleDbCommand command = new OleDbCommand($"DELETE FROM Читачі WHERE Номер_читацького_квитка='{NumberReaderComboBox.Text}'", _dbConnection);
             command.ExecuteNonQuery();
         }
         private void EditButton_Click(object sender, EventArgs e)
