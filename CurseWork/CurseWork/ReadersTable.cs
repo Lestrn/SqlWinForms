@@ -32,14 +32,14 @@ namespace CurseWork
         {
             try
             {
-                var listView = ReadersListView.SelectedItems[0];              
+                var listView = ReadersListView.SelectedItems[0];
                 FIOTextBox.Text = listView.SubItems[1].Text;
                 AdressTextBox.Text = listView.SubItems[2].Text;
                 PhoneTextBox.Text = listView.SubItems[3].Text;
                 FormService.SelectRowInComboBox(NumberReaderComboBox, listView.SubItems[0].Text);
             }
             catch { }
-           
+
         }
 
         public void AddButton_Click(object sender, EventArgs e)
@@ -51,8 +51,7 @@ namespace CurseWork
                     new ColumnValue("ПІБ_читача", "string", FIOTextBox.Text),
                     new ColumnValue("Адреса_читача", "string", AdressTextBox.Text),
                     new ColumnValue("Номер_телефона_читача", "string", PhoneTextBox.Text));
-                OleDbCommand oleDbCommand = new OleDbCommand(result, DbConnection);
-                oleDbCommand.ExecuteNonQuery();
+                DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
@@ -65,7 +64,8 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
-                Delete();
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Читачі", new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text));
+                DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
@@ -73,27 +73,22 @@ namespace CurseWork
                 MessageBox.Show("Виберіть поле для видалення");
             }
         }
-        public void Delete()
-        {
-            OleDbCommand command = new OleDbCommand($"DELETE FROM Читачі WHERE Номер_читацького_квитка='{NumberReaderComboBox.Text}'", DbConnection);
-            command.ExecuteNonQuery();
-        }
         public void EditButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
-                Edit();
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
+                    new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
+                    new ColumnValue("ПІБ_читача", "string", FIOTextBox.Text),
+                    new ColumnValue("Адреса_читача", "string", AdressTextBox.Text),
+                    new ColumnValue("Номер_телефона_читача", "string", PhoneTextBox.Text));
+                DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
             {
                 MessageBox.Show("Виберіть поле для редагування!");
             }
-        }
-        public void Edit()
-        {
-            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Читачі SET Номер_читацького_квитка =\'{NumberReaderComboBox.Text}\',  ПІБ_читача=\'{FIOTextBox.Text}\', Адреса_читача=\'{AdressTextBox.Text}\', Номер_телефона_читача=\'{PhoneTextBox.Text}\'  WHERE Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'", DbConnection);
-            oleDbCommand.ExecuteNonQuery();
         }
 
         public void Table_Closed(object sender, FormClosedEventArgs e)

@@ -53,5 +53,10 @@ namespace CurseWork
             string sqlQuery = $"{stringBuilder.ToString().Trim(' ').Trim(',')}{")"}";
             return sqlQuery;
         }
+        public static void SaveToDataBaseWithoutResult(string valueToSave, OleDbConnection dbConnection)
+        {
+            OleDbCommand dbCommand = new OleDbCommand(valueToSave, dbConnection);
+            dbCommand.ExecuteNonQuery();
+        }
     }
 }
