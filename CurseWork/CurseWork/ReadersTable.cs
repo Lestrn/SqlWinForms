@@ -46,18 +46,19 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(ForAddTextBox.Text))
             {
-                Add();
+                string result = DatabaseHelper.CreateRecordSqlQuerry("Читачі",
+                    new ColumnValue("Номер_читацького_квитка", "string", ForAddTextBox.Text),
+                    new ColumnValue("ПІБ_читача", "string", FIOTextBox.Text),
+                    new ColumnValue("Адреса_читача", "string", AdressTextBox.Text),
+                    new ColumnValue("Номер_телефона_читача", "string", PhoneTextBox.Text));
+                OleDbCommand oleDbCommand = new OleDbCommand(result, DbConnection);
+                oleDbCommand.ExecuteNonQuery();
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
             {
                 MessageBox.Show("Номер читацького квитка повинен бути заповненим!");
             }
-        }
-        public void Add()
-        {
-            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES(\"{ForAddTextBox.Text}\", \"{FIOTextBox.Text}\", \"{AdressTextBox.Text}\", \"{PhoneTextBox.Text}\")", DbConnection);
-            oleDbCommand.ExecuteNonQuery();
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
