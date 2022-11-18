@@ -58,5 +58,14 @@ namespace CurseWork
             OleDbCommand dbCommand = new OleDbCommand(valueToSave, dbConnection);
             dbCommand.ExecuteNonQuery();
         }
+        public static ColumnValue[] GetColumnValues(string[] columsName, string[] types, string[] values)
+        {
+            ColumnValue[] columnValues = new ColumnValue[values.Length];
+            for (int i = 0; i < columnValues.Length; i++)
+            {
+                columnValues[i] = new ColumnValue(columsName[i], types[i], values[i]);
+            }
+            return columnValues;
+        }
     }
 }
