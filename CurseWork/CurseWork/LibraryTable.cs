@@ -177,16 +177,23 @@ namespace CurseWork
                 MessageBox.Show("Выберите строку для редактирования", "Error", MessageBoxButtons.OK);
                 return;
             }
-            //Назва_книги ={ BookNameTextBox.Text}, Код_автора_книги ={ int.Parse(AuthorComboBox.Text)}, Рік_видання ={ int.Parse(DayOutTextBox.Text)}, Код_жанру ={ int.Parse(GenresComboBox.Text)}, Обкладинка ={ Img64BaseString}, Код_УДК ={ CodeUDKComboBox.Text}, Код_видавництва ={ int.Parse(PublishComboBox.Text)}, Ціна ={ decimal.Parse(CostTextBox.Text)}, Кількість_у_бібліотеці ={ int.Parse(AmountTextBox.Text)}, Чи_є_новим_виданням ={ NewDayOutComboBox.Text}, Ключові_слова ={ KeyWordsTextBox.Text}
-            //WHERE Назва = { BookNameTextBox.Text } Примітки_коротка_анотація ={ DescriptionTextBox.Text}
-            //$"UPDATE Бібліотека SET Назва_книги=\'{ BookNameTextBox.Text}\', Код_автора_книги={ int.Parse(AuthorComboBox.Text)}, Рік_видання={ int.Parse(DayOutTextBox.Text)}, Код_жанру={ int.Parse(GenresComboBox.Text)}, Обкладинка=\'{Img64BaseString}\', Код_УДК=\'{ CodeUDKComboBox.Text}\', Код_видавництва={ int.Parse(PublishComboBox.Text)}, Ціна={ decimal.Parse(CostTextBox.Text)}, Кількість_у_бібліотеці={ int.Parse(AmountTextBox.Text)}, Чи_є_новим_виданням=\'{ NewDayOutComboBox.Text}\', Ключові_слова={ KeyWordsTextBox.Text}, Примітки_коротка_анотація={ DescriptionTextBox.Text} WHERE Назва_книги=\'{BookNameTextBox.Text}\'"
-            //OleDbCommand command = new OleDbCommand("UPDATE Бібліотека SET Назва_книги=\'" + BookNameTextBox.Text + "\', " +
-            //    "Код_автора_книги=" + int.Parse(AuthorComboBox.Text) + ", " +
-            //    "Рік_видання=" + int.Parse(DayOutTextBox.Text) + ", " +
-            //    "Примітки_коротка_анотація=" + DescriptionTextBox.Text + ", " +
-            //    "Ключові_слова=" + KeyWordsTextBox.Text + " " +
-            //    "WHERE Назва_книги=\'" + BookNameTextBox.Text + "\'", _dbConnection);
-            //command.ExecuteNonQuery();
+
+            OleDbCommand command = new OleDbCommand("UPDATE Бібліотека SET " +
+                "Назва_книги=\"" + BookNameTextBox.Text + "\", " +
+                "Код_автора_книги=" + int.Parse(AuthorComboBox.Text) + ", " +
+                "Рік_видання=" + int.Parse(DayOutTextBox.Text) + ", " +
+                "Код_жанру=" + int.Parse(GenresComboBox.Text) + ", " +
+                "Обкладинка=\"" + Img64BaseString + "\", " +
+                "Код_УДК=\"" + CodeUDKComboBox.Text + "\", " +
+                "Код_видавництва=" + int.Parse(PublishComboBox.Text) + ", " + 
+                "Ціна=" + decimal.Parse(CostTextBox.Text) + ", " + 
+                "Кількість_у_бібліотеці=" + int.Parse(AmountTextBox.Text) +", " + 
+                "Чи_є_новим_виданням=\"" + NewDayOutComboBox.Text + "\", " +
+                "Примітки_коротка_анотація=\"" + DescriptionTextBox.Text + "\", " +
+                "Ключові_слова=\"" + KeyWordsTextBox.Text + "\" " +
+                "WHERE Назва_книги=\"" + BookNameTextBox.Text + "\"", _dbConnection);
+            command.ExecuteNonQuery();
+            LibraryLoader();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
