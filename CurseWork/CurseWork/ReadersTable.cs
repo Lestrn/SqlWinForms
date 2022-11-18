@@ -16,7 +16,7 @@ namespace CurseWork
         private OleDbConnection _dbConnection;
         private bool _isSelected = false;
         private ListView.SelectedListViewItemCollection _currentSelected;
-        
+
         public ReadersTable()
         {
             InitializeComponent();
@@ -31,6 +31,7 @@ namespace CurseWork
             OleDbDataReader reader;
             command = new OleDbCommand("SELECT * FROM Читачі", _dbConnection);
             reader = command.ExecuteReader();
+            ReadersListView.Clear();
             ReadersListView.FullRowSelect = true;
             while (reader.Read())
             {
@@ -54,7 +55,7 @@ namespace CurseWork
 
         private void SelectedItem(object sender, EventArgs e)
         {
-           
+
             _currentSelected = ReadersListView.SelectedItems;
             try
             {
@@ -80,7 +81,7 @@ namespace CurseWork
         }
         public void Add()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер читацького квитка, ПІБ читача, Адреса читача, Номер телефона читача) VALUES({ForAddTextBox.Text}, {FIOTextBox.Text}, {AdressTextBox.Text}, {PhoneTextBox.Text})", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES({ForAddTextBox.Text}, {FIOTextBox.Text}, {AdressTextBox.Text}, {PhoneTextBox.Text})", _dbConnection);
             oleDbCommand.ExecuteNonQuery();
         }
 
@@ -89,6 +90,7 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 Delete();
+                LoaderForReaders();
             }
             else
             {
@@ -105,6 +107,7 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 Edit();
+                LoaderForReaders();
             }
             else
             {
@@ -113,7 +116,7 @@ namespace CurseWork
         }
         public void Edit()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Читачі SET Номер читацького квитка =\'{NumberReaderComboBox.Text}\',  ПІБ читача=\'{FIOTextBox.Text}\', Адреса читача=\'{AdressTextBox.Text}\', Номер телефона читача=\'{PhoneTextBox.Text}\'  WHERE Номер читацького квитка=\'{NumberReaderComboBox.Text}\'", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Читачі SET Номер_читацького_квитка =\'{NumberReaderComboBox.Text}\',  ПІБ_читача=\'{FIOTextBox.Text}\', Адреса_читача=\'{AdressTextBox.Text}\', Номер_телефона_читача=\'{PhoneTextBox.Text}\'  WHERE Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'", _dbConnection);
             oleDbCommand.ExecuteNonQuery();
         }
     }
