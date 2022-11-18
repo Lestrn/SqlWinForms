@@ -105,8 +105,7 @@ namespace CurseWork
                 new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
                 new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
             });
-            OleDbCommand command = new OleDbCommand(updateQuery, DbConnection);
-            command.ExecuteNonQuery();
+            DatabaseHelper.SaveToDataBaseWithoutResult(updateQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
 
@@ -119,9 +118,7 @@ namespace CurseWork
             }
 
             var deleteQuery = DatabaseHelper.DeleteRecordSqlQuery("Бібліотека", new ColumnValue("Назва_книги", "string", BookNameTextBox.Text));
-            MessageBox.Show(deleteQuery, "Error", MessageBoxButtons.OK);
-            OleDbCommand command = new OleDbCommand(deleteQuery, DbConnection);
-            command.ExecuteNonQuery();
+            DatabaseHelper.SaveToDataBaseWithoutResult(deleteQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
 
@@ -142,8 +139,7 @@ namespace CurseWork
                 new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
                 new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
             });
-            OleDbCommand command = new OleDbCommand(createQuery, DbConnection);
-            command.ExecuteNonQuery();
+            DatabaseHelper.SaveToDataBaseWithoutResult(createQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
     }
