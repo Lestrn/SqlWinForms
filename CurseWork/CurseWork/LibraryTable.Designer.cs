@@ -66,17 +66,17 @@
             this.UploadPhotoButton = new System.Windows.Forms.Button();
             this.PublishLabel = new System.Windows.Forms.Label();
             this.LibraryGroupBox = new System.Windows.Forms.GroupBox();
-            this.AuthorComboBox = new System.Windows.Forms.ComboBox();
-            this.CodeUDKComboBox = new System.Windows.Forms.ComboBox();
             this.PublishComboBox = new System.Windows.Forms.ComboBox();
-            this.GenreCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.CodeUDKComboBox = new System.Windows.Forms.ComboBox();
+            this.AuthorComboBox = new System.Windows.Forms.ComboBox();
+            this.GenresComboBox = new System.Windows.Forms.ComboBox();
             this.LibraryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(11, 423);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 0;
@@ -86,7 +86,7 @@
             // RemoveButton
             // 
             this.RemoveButton.Location = new System.Drawing.Point(142, 423);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 1;
@@ -97,7 +97,7 @@
             // EditButton
             // 
             this.EditButton.Location = new System.Drawing.Point(340, 423);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 2;
@@ -218,7 +218,7 @@
             // DayOutTextBox
             // 
             this.DayOutTextBox.Location = new System.Drawing.Point(103, 96);
-            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DayOutTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DayOutTextBox.Name = "DayOutTextBox";
             this.DayOutTextBox.Size = new System.Drawing.Size(72, 20);
             this.DayOutTextBox.TabIndex = 12;
@@ -226,7 +226,7 @@
             // CostTextBox
             // 
             this.CostTextBox.Location = new System.Drawing.Point(75, 215);
-            this.CostTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CostTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.Size = new System.Drawing.Size(72, 20);
             this.CostTextBox.TabIndex = 13;
@@ -234,7 +234,7 @@
             // AmountTextBox
             // 
             this.AmountTextBox.Location = new System.Drawing.Point(81, 242);
-            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(72, 20);
             this.AmountTextBox.TabIndex = 14;
@@ -242,7 +242,7 @@
             // DescriptionTextBox
             // 
             this.DescriptionTextBox.Location = new System.Drawing.Point(94, 314);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(72, 20);
             this.DescriptionTextBox.TabIndex = 17;
@@ -250,7 +250,7 @@
             // KeyWordsTextBox
             // 
             this.KeyWordsTextBox.Location = new System.Drawing.Point(94, 346);
-            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KeyWordsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.KeyWordsTextBox.Name = "KeyWordsTextBox";
             this.KeyWordsTextBox.Size = new System.Drawing.Size(72, 20);
             this.KeyWordsTextBox.TabIndex = 18;
@@ -258,7 +258,7 @@
             // BookNameTextBox
             // 
             this.BookNameTextBox.Location = new System.Drawing.Point(94, 32);
-            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BookNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.BookNameTextBox.Name = "BookNameTextBox";
             this.BookNameTextBox.Size = new System.Drawing.Size(72, 20);
             this.BookNameTextBox.TabIndex = 21;
@@ -270,7 +270,7 @@
             "Так",
             "Ні"});
             this.NewDayOutComboBox.Location = new System.Drawing.Point(94, 281);
-            this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewDayOutComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.NewDayOutComboBox.Name = "NewDayOutComboBox";
             this.NewDayOutComboBox.Size = new System.Drawing.Size(72, 21);
             this.NewDayOutComboBox.TabIndex = 22;
@@ -278,7 +278,7 @@
             // OpenPhotoButton
             // 
             this.OpenPhotoButton.Location = new System.Drawing.Point(50, 158);
-            this.OpenPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenPhotoButton.Margin = new System.Windows.Forms.Padding(2);
             this.OpenPhotoButton.Name = "OpenPhotoButton";
             this.OpenPhotoButton.Size = new System.Drawing.Size(71, 20);
             this.OpenPhotoButton.TabIndex = 23;
@@ -367,7 +367,7 @@
             // UploadPhotoButton
             // 
             this.UploadPhotoButton.Location = new System.Drawing.Point(126, 158);
-            this.UploadPhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UploadPhotoButton.Margin = new System.Windows.Forms.Padding(2);
             this.UploadPhotoButton.Name = "UploadPhotoButton";
             this.UploadPhotoButton.Size = new System.Drawing.Size(71, 20);
             this.UploadPhotoButton.TabIndex = 24;
@@ -386,7 +386,7 @@
             // 
             // LibraryGroupBox
             // 
-            this.LibraryGroupBox.Controls.Add(this.GenreCheckedListBox);
+            this.LibraryGroupBox.Controls.Add(this.GenresComboBox);
             this.LibraryGroupBox.Controls.Add(this.PublishComboBox);
             this.LibraryGroupBox.Controls.Add(this.CodeUDKComboBox);
             this.LibraryGroupBox.Controls.Add(this.AuthorComboBox);
@@ -413,30 +413,14 @@
             this.LibraryGroupBox.Controls.Add(this.AuthorLabel);
             this.LibraryGroupBox.Controls.Add(this.BookNameLabel);
             this.LibraryGroupBox.Location = new System.Drawing.Point(61, 22);
-            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LibraryGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.LibraryGroupBox.Name = "LibraryGroupBox";
-            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LibraryGroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.LibraryGroupBox.Size = new System.Drawing.Size(604, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
             this.LibraryGroupBox.Text = "Библиотека";
             this.LibraryGroupBox.Visible = false;
-            // 
-            // AuthorComboBox
-            // 
-            this.AuthorComboBox.FormattingEnabled = true;
-            this.AuthorComboBox.Location = new System.Drawing.Point(60, 64);
-            this.AuthorComboBox.Name = "AuthorComboBox";
-            this.AuthorComboBox.Size = new System.Drawing.Size(121, 21);
-            this.AuthorComboBox.TabIndex = 25;
-            // 
-            // CodeUDKComboBox
-            // 
-            this.CodeUDKComboBox.FormattingEnabled = true;
-            this.CodeUDKComboBox.Location = new System.Drawing.Point(75, 189);
-            this.CodeUDKComboBox.Name = "CodeUDKComboBox";
-            this.CodeUDKComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CodeUDKComboBox.TabIndex = 26;
             // 
             // PublishComboBox
             // 
@@ -446,13 +430,29 @@
             this.PublishComboBox.Size = new System.Drawing.Size(121, 21);
             this.PublishComboBox.TabIndex = 27;
             // 
-            // GenreCheckedListBox
+            // CodeUDKComboBox
             // 
-            this.GenreCheckedListBox.FormattingEnabled = true;
-            this.GenreCheckedListBox.Location = new System.Drawing.Point(445, 280);
-            this.GenreCheckedListBox.Name = "GenreCheckedListBox";
-            this.GenreCheckedListBox.Size = new System.Drawing.Size(35, 94);
-            this.GenreCheckedListBox.TabIndex = 30;
+            this.CodeUDKComboBox.FormattingEnabled = true;
+            this.CodeUDKComboBox.Location = new System.Drawing.Point(75, 189);
+            this.CodeUDKComboBox.Name = "CodeUDKComboBox";
+            this.CodeUDKComboBox.Size = new System.Drawing.Size(121, 21);
+            this.CodeUDKComboBox.TabIndex = 26;
+            // 
+            // AuthorComboBox
+            // 
+            this.AuthorComboBox.FormattingEnabled = true;
+            this.AuthorComboBox.Location = new System.Drawing.Point(60, 64);
+            this.AuthorComboBox.Name = "AuthorComboBox";
+            this.AuthorComboBox.Size = new System.Drawing.Size(121, 21);
+            this.AuthorComboBox.TabIndex = 25;
+            // 
+            // GenresComboBox
+            // 
+            this.GenresComboBox.FormattingEnabled = true;
+            this.GenresComboBox.Location = new System.Drawing.Point(388, 328);
+            this.GenresComboBox.Name = "GenresComboBox";
+            this.GenresComboBox.Size = new System.Drawing.Size(121, 21);
+            this.GenresComboBox.TabIndex = 28;
             // 
             // LibraryTable
             // 
@@ -463,7 +463,7 @@
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LibraryTable";
             this.Text = "LibraryTable";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
@@ -517,6 +517,6 @@
         private System.Windows.Forms.ComboBox AuthorComboBox;
         private System.Windows.Forms.ComboBox CodeUDKComboBox;
         private System.Windows.Forms.ComboBox PublishComboBox;
-        private System.Windows.Forms.CheckedListBox GenreCheckedListBox;
+        private System.Windows.Forms.ComboBox GenresComboBox;
     }
 }
