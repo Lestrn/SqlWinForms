@@ -21,34 +21,11 @@ namespace CurseWork
             DbConnection = new OleDbConnection(DataBaseController.DatabaseConnection);
             DbConnection.Open();
         }
-
-
-        //private void LoaderForReaders()
-        //{
-        //    ReadersListView.Items.Clear();
-        //    OleDbCommand command;
-        //    OleDbDataReader reader;
-        //    command = new OleDbCommand("SELECT * FROM Читачі", DbConnection);
-        //    reader = command.ExecuteReader();
-        //    ReadersListView.FullRowSelect = true;
-        //    while (reader.Read())
-        //    {
-        //        ListViewItem listViewItem = new ListViewItem();
-        //        listViewItem.Text = reader.GetString(0);
-        //        for (int j = 1; j <= 3; j++)
-        //        {
-        //            listViewItem.SubItems.Add(reader.GetValue(j).ToString());
-        //        }
-
-        //        ReadersListView.Items.Add(listViewItem);
-        //    }
-
-        //    reader.Close();
-        //}
-
         public void TableForm_Load(object sender, EventArgs e)
         {
+            ReadersListView.FullRowSelect = true;
             FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
+            FormService.LoadComboBoxFromDB(NumberReaderComboBox, DbConnection, "SELECT Номер_читацького_квитка FROM Читачі");
         }
 
         public void TableListViewItem_Selected(object sender, EventArgs e)
