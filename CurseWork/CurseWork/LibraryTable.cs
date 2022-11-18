@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CurseWork
@@ -178,7 +179,14 @@ namespace CurseWork
                 return;
             }
 
-            OleDbCommand command = new OleDbCommand($"UPDATE Бібліотека SET Обкладинка=\'{Img64BaseString}\' WHERE Назва=\'{BookNameTextBox.Text}\'", _dbConnection);
+            StringBuilder genres = new StringBuilder();
+            for (int i = 0; i < GenreCheckedListBox.CheckedItems.Count; i++)
+            {
+                genres.Append(GenreCheckedListBox.CheckedItems[i].ToString());
+                genres.Append(";");
+            }
+            var tempGenres = genres.ToString().Trim(';');
+            OleDbCommand command = new OleDbCommand($"UPDATE Бібліотека SET Жанр.Value=\'{tempGenres}\' WHERE Назва=\'{BookNameTextBox.Text}\'", _dbConnection);
             command.ExecuteNonQuery();
         }
 

@@ -465,7 +465,7 @@
             this.Controls.Add(this.AddButton);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LibraryTable";
-            this.Text = "Table";
+            this.Text = "LibraryTable";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
             this.Load += new System.EventHandler(this.TableForm_Load);
             this.LibraryGroupBox.ResumeLayout(false);
