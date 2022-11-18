@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ReaderGroupBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ForAddTextBox = new System.Windows.Forms.TextBox();
             this.NumberReaderComboBox = new System.Windows.Forms.ComboBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.ReaderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,15 @@
             this.ReaderGroupBox.TabIndex = 5;
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатель";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Для добавления";
             // 
             // ForAddTextBox
             // 
@@ -161,7 +170,7 @@
             this.ReadersListView.TabIndex = 6;
             this.ReadersListView.UseCompatibleStateImageBehavior = false;
             this.ReadersListView.View = System.Windows.Forms.View.Details;
-            this.ReadersListView.SelectedIndexChanged += new System.EventHandler(this.SelectedItem);
+            this.ReadersListView.SelectedIndexChanged += new System.EventHandler(this.TableListViewItem_Selected);
             // 
             // NumberColumn
             // 
@@ -197,7 +206,7 @@
             this.DeleteButton.TabIndex = 8;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.DeleteButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // EditButton
             // 
@@ -208,15 +217,6 @@
             this.EditButton.Text = "Изменить";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Для добавления";
             // 
             // ReadersTable
             // 
@@ -230,7 +230,8 @@
             this.Controls.Add(this.ReaderGroupBox);
             this.Name = "ReadersTable";
             this.Text = "ReadersTable";
-            this.Load += new System.EventHandler(this.ReadersLoad);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
+            this.Load += new System.EventHandler(this.TableForm_Load);
             this.ReaderGroupBox.ResumeLayout(false);
             this.ReaderGroupBox.PerformLayout();
             this.ResumeLayout(false);

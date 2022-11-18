@@ -11,47 +11,47 @@ using System.Windows.Forms;
 
 namespace CurseWork
 {
-    public partial class ReadersTable : Form
+    public partial class ReadersTable : Form, ITableDatabase
     {
-        private OleDbConnection _dbConnection;
+        public OleDbConnection DbConnection { get; }
 
         public ReadersTable()
         {
             InitializeComponent();
-            _dbConnection = new OleDbConnection(DataBaseController.DatabaseConnection);
-            _dbConnection.Open();
+            DbConnection = new OleDbConnection(DataBaseController.DatabaseConnection);
+            DbConnection.Open();
         }
 
 
-        private void LoaderForReaders()
+        //private void LoaderForReaders()
+        //{
+        //    ReadersListView.Items.Clear();
+        //    OleDbCommand command;
+        //    OleDbDataReader reader;
+        //    command = new OleDbCommand("SELECT * FROM Читачі", DbConnection);
+        //    reader = command.ExecuteReader();
+        //    ReadersListView.FullRowSelect = true;
+        //    while (reader.Read())
+        //    {
+        //        ListViewItem listViewItem = new ListViewItem();
+        //        listViewItem.Text = reader.GetString(0);
+        //        for (int j = 1; j <= 3; j++)
+        //        {
+        //            listViewItem.SubItems.Add(reader.GetValue(j).ToString());
+        //        }
+
+        //        ReadersListView.Items.Add(listViewItem);
+        //    }
+
+        //    reader.Close();
+        //}
+
+        public void TableForm_Load(object sender, EventArgs e)
         {
-            ReadersListView.Items.Clear();
-            OleDbCommand command;
-            OleDbDataReader reader;
-            command = new OleDbCommand("SELECT * FROM Читачі", _dbConnection);
-            reader = command.ExecuteReader();
-            ReadersListView.FullRowSelect = true;
-            while (reader.Read())
-            {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = reader.GetString(0);
-                for (int j = 1; j <= 3; j++)
-                {
-                    listViewItem.SubItems.Add(reader.GetValue(j).ToString());
-                }
-
-                ReadersListView.Items.Add(listViewItem);
-            }
-
-            reader.Close();
+            FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
         }
 
-        private void ReadersLoad(object sender, EventArgs e)
-        {
-            LoaderForReaders();
-        }
-
-        private void SelectedItem(object sender, EventArgs e)
+        public void TableListViewItem_Selected(object sender, EventArgs e)
         {
             try
             {
@@ -64,12 +64,12 @@ namespace CurseWork
             catch { }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        public void AddButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(ForAddTextBox.Text))
             {
                 Add();
-                LoaderForReaders();
+                FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
             {
@@ -78,16 +78,16 @@ namespace CurseWork
         }
         public void Add()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES(\"{ForAddTextBox.Text}\", \"{FIOTextBox.Text}\", \"{AdressTextBox.Text}\", \"{PhoneTextBox.Text}\")", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"INSERT INTO Читачі (Номер_читацького_квитка, ПІБ_читача, Адреса_читача, Номер_телефона_читача) VALUES(\"{ForAddTextBox.Text}\", \"{FIOTextBox.Text}\", \"{AdressTextBox.Text}\", \"{PhoneTextBox.Text}\")", DbConnection);
             oleDbCommand.ExecuteNonQuery();
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        public void RemoveButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 Delete();
-                LoaderForReaders();
+                FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
             {
@@ -96,15 +96,15 @@ namespace CurseWork
         }
         public void Delete()
         {
-            OleDbCommand command = new OleDbCommand($"DELETE FROM Читачі WHERE Номер_читацького_квитка='{NumberReaderComboBox.Text}'", _dbConnection);
+            OleDbCommand command = new OleDbCommand($"DELETE FROM Читачі WHERE Номер_читацького_квитка='{NumberReaderComboBox.Text}'", DbConnection);
             command.ExecuteNonQuery();
         }
-        private void EditButton_Click(object sender, EventArgs e)
+        public void EditButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 Edit();
-                LoaderForReaders();
+                FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
             else
             {
@@ -113,8 +113,13 @@ namespace CurseWork
         }
         public void Edit()
         {
-            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Читачі SET Номер_читацького_квитка =\'{NumberReaderComboBox.Text}\',  ПІБ_читача=\'{FIOTextBox.Text}\', Адреса_читача=\'{AdressTextBox.Text}\', Номер_телефона_читача=\'{PhoneTextBox.Text}\'  WHERE Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'", _dbConnection);
+            OleDbCommand oleDbCommand = new OleDbCommand($"UPDATE Читачі SET Номер_читацького_квитка =\'{NumberReaderComboBox.Text}\',  ПІБ_читача=\'{FIOTextBox.Text}\', Адреса_читача=\'{AdressTextBox.Text}\', Номер_телефона_читача=\'{PhoneTextBox.Text}\'  WHERE Номер_читацького_квитка=\'{NumberReaderComboBox.Text}\'", DbConnection);
             oleDbCommand.ExecuteNonQuery();
+        }
+
+        public void Table_Closed(object sender, FormClosedEventArgs e)
+        {
+            DbConnection.Close();
         }
     }
 }
