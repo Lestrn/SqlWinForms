@@ -137,6 +137,9 @@
     <EmbeddedResource Include="DataBaseController.resx">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenresTable.resx">
+      <DependentUpon>GenresTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MagazineTable.resx">
       <DependentUpon>MagazineTable.cs</DependentUpon>
     </EmbeddedResource>
