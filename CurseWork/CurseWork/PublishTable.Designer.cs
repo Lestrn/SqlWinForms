@@ -36,7 +36,7 @@
             this.PublishTextBox = new System.Windows.Forms.TextBox();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.PublishListView = new System.Windows.Forms.ListView();
             this.Code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Publish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -113,21 +113,21 @@
             this.PhoneTextBox.Size = new System.Drawing.Size(100, 22);
             this.PhoneTextBox.TabIndex = 7;
             // 
-            // listView1
+            // PublishListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.PublishListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Code,
             this.Publish,
             this.Address,
             this.Phone});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(368, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(361, 218);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.TableListViewItem_Selected);
+            this.PublishListView.HideSelection = false;
+            this.PublishListView.Location = new System.Drawing.Point(368, 12);
+            this.PublishListView.Name = "PublishListView";
+            this.PublishListView.Size = new System.Drawing.Size(361, 218);
+            this.PublishListView.TabIndex = 8;
+            this.PublishListView.UseCompatibleStateImageBehavior = false;
+            this.PublishListView.View = System.Windows.Forms.View.Details;
+            this.PublishListView.SelectedIndexChanged += new System.EventHandler(this.TableListViewItem_Selected);
             // 
             // Code
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.PublishGroupBox);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.PublishListView);
             this.Name = "PublishTable";
             this.Text = "PublishTable";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
@@ -222,7 +222,7 @@
         private System.Windows.Forms.TextBox PublishTextBox;
         private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.TextBox PhoneTextBox;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView PublishListView;
         private System.Windows.Forms.GroupBox PublishGroupBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button DeleteButton;
