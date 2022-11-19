@@ -111,6 +111,7 @@
     <Compile Include="Query.Designer.cs">
       <DependentUpon>Query.cs</DependentUpon>
     </Compile>
+    <Compile Include="QueryHelper.cs" />
     <Compile Include="ReadersTable.cs">
       <SubType>Form</SubType>
     </Compile>
