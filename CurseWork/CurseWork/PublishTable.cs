@@ -87,8 +87,9 @@ namespace CurseWork
         {
             try
             {
-                var listView = PublishListView.SelectedItems[1];
-                AddressTextBox.Text = listView.SubItems[1].Text;
+                var listView = PublishListView.SelectedItems[0];
+                PublishTextBox.Text = listView.SubItems[1].Text;
+                AddressTextBox.Text = listView.SubItems[2].Text;
                 PhoneTextBox.Text = listView.SubItems[3].Text;
                 FormService.SelectRowInComboBox(CodeComboBox, listView.SubItems[0].Text);
             }
