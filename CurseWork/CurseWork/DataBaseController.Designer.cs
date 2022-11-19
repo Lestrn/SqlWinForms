@@ -43,7 +43,9 @@
             this.TabelsComboBox.Items.AddRange(new object[] {
             "Библиотека",
             "Журнал",
-            "Читатели"});
+            "Читатели",
+            "Издательство",
+            "Автор"});
             this.TabelsComboBox.Location = new System.Drawing.Point(12, 92);
             this.TabelsComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabelsComboBox.Name = "TabelsComboBox";
