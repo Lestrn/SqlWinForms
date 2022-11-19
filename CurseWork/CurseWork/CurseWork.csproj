@@ -84,7 +84,7 @@
     <Compile Include="Tables\GenresTable.Designer.cs">
       <DependentUpon>GenresTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="ITableDatabase.cs" />
+    <Compile Include="Tables\ITableDatabase.cs" />
     <Compile Include="Tables\MagazineTable.cs">
       <SubType>Form</SubType>
     </Compile>
