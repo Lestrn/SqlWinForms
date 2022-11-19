@@ -155,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PublishTable.resx">
+      <DependentUpon>PublishTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Query.resx">
       <DependentUpon>Query.cs</DependentUpon>
     </EmbeddedResource>
