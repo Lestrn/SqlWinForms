@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorTable.Designer.cs">
+      <DependentUpon>AuthorTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColumnValue.cs" />
     <Compile Include="DataBaseController.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,9 @@
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </Compile>
     <Compile Include="FormService.cs" />
+    <EmbeddedResource Include="AuthorTable.resx">
+      <DependentUpon>AuthorTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataBaseController.resx">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </EmbeddedResource>

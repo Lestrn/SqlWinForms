@@ -18,7 +18,7 @@ namespace CurseWork
             while (reader.Read())
             {
                 ListViewItem listViewItem = new ListViewItem();
-                listViewItem.Text = reader.GetString(0);
+                listViewItem.Text = reader.GetValue(0).ToString();
                 for (int j = 1; j <= countColumns - 1; j++)
                 {
                     listViewItem.SubItems.Add(reader.GetValue(j).ToString());
