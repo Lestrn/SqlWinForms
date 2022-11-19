@@ -38,6 +38,9 @@ namespace CurseWork
                 case "Автор":
                     form = new AuthorTable();
                     break;
+                case "Жанры":
+                    form = new GenresTable();
+                    break;
             }
 
             form.ShowDialog();

@@ -24,17 +24,29 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-
+            var sqlQuery = DatabaseHelper.CreateRecordSqlQuerry("Автори",
+                new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValue("ФІО", "string", PIBTextBox.Text),
+                new ColumnValue("Примітки", "string", NoteTextBox.Text));
+            DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
+            FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }
 
         public void EditButton_Click(object sender, EventArgs e)
         {
-
+            var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Автори", new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValue("ФІО", "string", PIBTextBox.Text),
+                new ColumnValue("Примітки", "string", NoteTextBox.Text));
+            DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
+            FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
-
+            var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Автори", new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text));
+            DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
+            FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }
 
         public void TableForm_Load(object sender, EventArgs e)
@@ -45,7 +57,14 @@ namespace CurseWork
 
         public void TableListViewItem_Selected(object sender, EventArgs e)
         {
-            
+            try
+            {
+                var listItem = AuthorListView.SelectedItems[0];
+                CodeAuthorTextBox.Text = listItem.SubItems[0].Text;
+                PIBTextBox.Text = listItem.SubItems[1].Text;
+                NoteTextBox.Text = listItem.SubItems[2].Text;
+            }
+            catch { }
         }
 
         public void Table_Closed(object sender, FormClosedEventArgs e)

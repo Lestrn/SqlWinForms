@@ -78,6 +78,12 @@
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="GenresTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenresTable.Designer.cs">
+      <DependentUpon>GenresTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="ITableDatabase.cs" />
     <Compile Include="MagazineTable.cs">
       <SubType>Form</SubType>
