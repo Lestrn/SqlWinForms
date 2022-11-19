@@ -64,31 +64,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorTable.cs">
+    <Compile Include="Tables\AuthorTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthorTable.Designer.cs">
+    <Compile Include="Tables\AuthorTable.Designer.cs">
       <DependentUpon>AuthorTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="ColumnValue.cs" />
+    <Compile Include="Helpers\ColumnValue.cs" />
     <Compile Include="DataBaseController.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataBaseController.Designer.cs">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseHelper.cs" />
-    <Compile Include="GenresTable.cs">
+    <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Tables\GenresTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenresTable.Designer.cs">
+    <Compile Include="Tables\GenresTable.Designer.cs">
       <DependentUpon>GenresTable.cs</DependentUpon>
     </Compile>
     <Compile Include="ITableDatabase.cs" />
-    <Compile Include="MagazineTable.cs">
+    <Compile Include="Tables\MagazineTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MagazineTable.Designer.cs">
+    <Compile Include="Tables\MagazineTable.Designer.cs">
       <DependentUpon>MagazineTable.cs</DependentUpon>
     </Compile>
     <Compile Include="PhotoView.cs">
@@ -99,10 +99,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PublishTable.cs">
+    <Compile Include="Tables\PublishTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PublishTable.Designer.cs">
+    <Compile Include="Tables\PublishTable.Designer.cs">
       <DependentUpon>PublishTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Query.cs">
@@ -111,11 +111,10 @@
     <Compile Include="Query.Designer.cs">
       <DependentUpon>Query.cs</DependentUpon>
     </Compile>
-    <Compile Include="QueryHelper.cs" />
-    <Compile Include="ReadersTable.cs">
+    <Compile Include="Tables\ReadersTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReadersTable.Designer.cs">
+    <Compile Include="Tables\ReadersTable.Designer.cs">
       <DependentUpon>ReadersTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Report.cs">
@@ -125,23 +124,23 @@
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="LibraryTable.cs">
+    <Compile Include="Tables\LibraryTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryTable.Designer.cs">
+    <Compile Include="Tables\LibraryTable.Designer.cs">
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormService.cs" />
-    <EmbeddedResource Include="AuthorTable.resx">
+    <Compile Include="Helpers\FormService.cs" />
+    <EmbeddedResource Include="Tables\AuthorTable.resx">
       <DependentUpon>AuthorTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataBaseController.resx">
       <DependentUpon>DataBaseController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenresTable.resx">
+    <EmbeddedResource Include="Tables\GenresTable.resx">
       <DependentUpon>GenresTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MagazineTable.resx">
+    <EmbeddedResource Include="Tables\MagazineTable.resx">
       <DependentUpon>MagazineTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhotoView.resx">
@@ -156,19 +155,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PublishTable.resx">
+    <EmbeddedResource Include="Tables\PublishTable.resx">
       <DependentUpon>PublishTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Query.resx">
       <DependentUpon>Query.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReadersTable.resx">
+    <EmbeddedResource Include="Tables\ReadersTable.resx">
       <DependentUpon>ReadersTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryTable.resx">
+    <EmbeddedResource Include="Tables\LibraryTable.resx">
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -200,5 +199,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
