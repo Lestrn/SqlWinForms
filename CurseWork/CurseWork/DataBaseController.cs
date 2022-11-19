@@ -36,9 +36,8 @@ namespace CurseWork
                     form = new PublishTable();
                     break;
                 case "Автор":
-
+                    form = new AuthorTable();
                     break;
-
             }
 
             form.ShowDialog();
