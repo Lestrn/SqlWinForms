@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CurseWork
 {
-    public class ColumnValue
+    public class ColumnValuePair
     {
-        public ColumnValue(string columnName, string columnType, string value)
+        public ColumnValuePair(string columnName, string columnType, string value)
         {
             ColumnName = columnName;
             ColumnType = columnType;

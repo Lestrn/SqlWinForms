@@ -90,20 +90,20 @@ namespace CurseWork
                 return;
             }
 
-            var updateQuery = DatabaseHelper.UpdateRecordSqlQuery("Бібліотека", new ColumnValue("Назва_книги", "string", BookNameTextBox.Text), new ColumnValue[]
+            var updateQuery = DatabaseHelper.UpdateRecordSqlQuery("Бібліотека", new ColumnValuePair("Назва_книги", "string", BookNameTextBox.Text), new ColumnValuePair[]
             {
-                new ColumnValue("Назва_книги", "string", BookNameTextBox.Text),
-                new ColumnValue("Код_автора_книги", "int", AuthorComboBox.Text),
-                new ColumnValue("Рік_видання", "int", DayOutTextBox.Text),
-                new ColumnValue("Код_жанру", "int", GenresComboBox.Text),
-                new ColumnValue("Обкладинка", "string", Img64BaseString),
-                new ColumnValue("Код_УДК", "string", CodeUDKComboBox.Text),
-                new ColumnValue("Код_видавництва", "int", PublishComboBox.Text),
-                new ColumnValue("Ціна", "decimal", CostTextBox.Text),
-                new ColumnValue("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
-                new ColumnValue("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
-                new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
-                new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
+                new ColumnValuePair("Назва_книги", "string", BookNameTextBox.Text),
+                new ColumnValuePair("Код_автора_книги", "int", AuthorComboBox.Text),
+                new ColumnValuePair("Рік_видання", "int", DayOutTextBox.Text),
+                new ColumnValuePair("Код_жанру", "int", GenresComboBox.Text),
+                new ColumnValuePair("Обкладинка", "string", Img64BaseString),
+                new ColumnValuePair("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValuePair("Код_видавництва", "int", PublishComboBox.Text),
+                new ColumnValuePair("Ціна", "decimal", CostTextBox.Text),
+                new ColumnValuePair("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
+                new ColumnValuePair("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
+                new ColumnValuePair("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
+                new ColumnValuePair("Ключові_слова", "string", KeyWordsTextBox.Text)
             });
             DatabaseHelper.SaveToDataBaseWithoutResult(updateQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
@@ -117,27 +117,27 @@ namespace CurseWork
                 return;
             }
 
-            var deleteQuery = DatabaseHelper.DeleteRecordSqlQuery("Бібліотека", new ColumnValue("Назва_книги", "string", BookNameTextBox.Text));
+            var deleteQuery = DatabaseHelper.DeleteRecordSqlQuery("Бібліотека", new ColumnValuePair("Назва_книги", "string", BookNameTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(deleteQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
         }
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-            var createQuery = DatabaseHelper.CreateRecordSqlQuerry("Бібліотека", new ColumnValue[]
+            var createQuery = DatabaseHelper.CreateRecordSqlQuerry("Бібліотека", new ColumnValuePair[]
             {
-                new ColumnValue("Назва_книги", "string", BookNameTextBox.Text),
-                new ColumnValue("Код_автора_книги", "int", AuthorComboBox.Text),
-                new ColumnValue("Рік_видання", "int", DayOutTextBox.Text),
-                new ColumnValue("Код_жанру", "int", GenresComboBox.Text),
-                new ColumnValue("Обкладинка", "string", Img64BaseString),
-                new ColumnValue("Код_УДК", "string", CodeUDKComboBox.Text),
-                new ColumnValue("Код_видавництва", "int", PublishComboBox.Text),
-                new ColumnValue("Ціна", "decimal", CostTextBox.Text),
-                new ColumnValue("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
-                new ColumnValue("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
-                new ColumnValue("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
-                new ColumnValue("Ключові_слова", "string", KeyWordsTextBox.Text)
+                new ColumnValuePair("Назва_книги", "string", BookNameTextBox.Text),
+                new ColumnValuePair("Код_автора_книги", "int", AuthorComboBox.Text),
+                new ColumnValuePair("Рік_видання", "int", DayOutTextBox.Text),
+                new ColumnValuePair("Код_жанру", "int", GenresComboBox.Text),
+                new ColumnValuePair("Обкладинка", "string", Img64BaseString),
+                new ColumnValuePair("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValuePair("Код_видавництва", "int", PublishComboBox.Text),
+                new ColumnValuePair("Ціна", "decimal", CostTextBox.Text),
+                new ColumnValuePair("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
+                new ColumnValuePair("Чи_є_новим_виданням", "string", NewDayOutComboBox.Text),
+                new ColumnValuePair("Примітки_коротка_анотація", "string", DescriptionTextBox.Text),
+                new ColumnValuePair("Ключові_слова", "string", KeyWordsTextBox.Text)
             });
             DatabaseHelper.SaveToDataBaseWithoutResult(createQuery, DbConnection);
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);

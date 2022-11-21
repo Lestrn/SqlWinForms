@@ -25,24 +25,24 @@ namespace CurseWork
         public void AddButton_Click(object sender, EventArgs e)
         {
             var sqlQuery = DatabaseHelper.CreateRecordSqlQuerry("Жанри",
-                new ColumnValue("Код_жанра", "int", CodeGenreTextBox.Text),
-                new ColumnValue("Жанр", "string", GenreTextBox.Text));
+                new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
+                new ColumnValuePair("Жанр", "string", GenreTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(GenresListView, DbConnection, "SELECT * FROM Жанри", 2);
         }
 
         public void EditButton_Click(object sender, EventArgs e)
         {
-            var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Жанри", new ColumnValue("Код_жанра", "int", CodeGenreTextBox.Text),
-                new ColumnValue("Код_жанра", "int", CodeGenreTextBox.Text),
-                new ColumnValue("Жанр", "string", GenreTextBox.Text));
+            var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Жанри", new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
+                new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
+                new ColumnValuePair("Жанр", "string", GenreTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(GenresListView, DbConnection, "SELECT * FROM Жанри", 2);
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
-            var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Жанри", new ColumnValue("Код_жанра", "int", CodeGenreTextBox.Text));
+            var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Жанри", new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(GenresListView, DbConnection, "SELECT * FROM Жанри", 2);
         }

@@ -50,7 +50,7 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(CodeComboBox.Text))
             {
-                string result = DatabaseHelper.DeleteRecordSqlQuery("Видавництво", new ColumnValue("Код", "int", CodeComboBox.Text));
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeComboBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
             }
@@ -65,7 +65,7 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(CodeComboBox.Text))
             {
                 FillValues();
-                string result = DatabaseHelper.UpdateRecordSqlQuery("Видавництво", new ColumnValue("Код", "int", CodeComboBox.Text), DatabaseHelper.GetColumnValues(columnNames, types, values));
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeComboBox.Text), DatabaseHelper.GetColumnValues(columnNames, types, values));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
             }

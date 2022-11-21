@@ -49,7 +49,7 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(AddNumberReaderTextBox.Text))
             {
                 FillValuesArr(true);
-                ColumnValue[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
+                ColumnValuePair[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Журнал", columnValues);
                 MessageBox.Show(result);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
@@ -73,8 +73,8 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 FillValuesArr();
-                ColumnValue[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
-                string result = DatabaseHelper.UpdateRecordSqlQuery("Журнал", new ColumnValue("Код_УДК", "string", CodeNumberTextBox.Text), columnValues);
+                ColumnValuePair[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Журнал", new ColumnValuePair("Код_УДК", "string", CodeNumberTextBox.Text), columnValues);
                 MessageBox.Show(result);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
@@ -88,7 +88,7 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
-                string result = DatabaseHelper.DeleteRecordSqlQuery("Журнал", new ColumnValue("Код_УДК", "string", CodeNumberTextBox.Text));
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Журнал", new ColumnValuePair("Код_УДК", "string", CodeNumberTextBox.Text));
                 MessageBox.Show(result);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
