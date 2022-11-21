@@ -71,9 +71,9 @@
             this.AddNumberReaderLabel.AutoSize = true;
             this.AddNumberReaderLabel.Location = new System.Drawing.Point(-3, 164);
             this.AddNumberReaderLabel.Name = "AddNumberReaderLabel";
-            this.AddNumberReaderLabel.Size = new System.Drawing.Size(113, 16);
+            this.AddNumberReaderLabel.Size = new System.Drawing.Size(89, 16);
             this.AddNumberReaderLabel.TabIndex = 10;
-            this.AddNumberReaderLabel.Text = "Для добавления";
+            this.AddNumberReaderLabel.Text = "Для додання";
             // 
             // AddNumberReaderTextBox
             // 
@@ -105,9 +105,9 @@
             this.NumberReaderLabel.AutoSize = true;
             this.NumberReaderLabel.Location = new System.Drawing.Point(0, 121);
             this.NumberReaderLabel.Name = "NumberReaderLabel";
-            this.NumberReaderLabel.Size = new System.Drawing.Size(200, 16);
+            this.NumberReaderLabel.Size = new System.Drawing.Size(176, 16);
             this.NumberReaderLabel.TabIndex = 6;
-            this.NumberReaderLabel.Text = "Номер читетельского билета";
+            this.NumberReaderLabel.Text = "Номер читацького квитка";
             // 
             // CodeLabel
             // 
@@ -170,7 +170,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(91, 26);
             this.AddButton.TabIndex = 8;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -181,7 +181,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(101, 26);
             this.EditButton.TabIndex = 9;
-            this.EditButton.Text = "Изменить";
+            this.EditButton.Text = "Змінити";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -192,7 +192,7 @@
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(91, 26);
             this.DeleteButton.TabIndex = 10;
-            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.Text = "Видалити";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
