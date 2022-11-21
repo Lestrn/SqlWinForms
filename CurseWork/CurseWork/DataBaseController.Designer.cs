@@ -58,27 +58,16 @@
             this.QueryComboBox.FormattingEnabled = true;
             this.QueryComboBox.Items.AddRange(new object[] {
             "Вибірка",
-            "",
             "Проекція",
-            "",
             "З\'єднання з вибіркою",
-            "",
             "З\'єднання з проекцією",
-            "",
             "Агрегуючі функції SELECT",
-            "",
             "Агрегуючі функції HAVING",
-            "",
             "Угруповання з умовою",
-            "",
             "Угруповання без умови",
-            "",
             "Об\'єднання",
-            "",
             "Перетин",
-            "",
             "Різниця",
-            "",
             "Поділ"});
             this.QueryComboBox.Location = new System.Drawing.Point(275, 92);
             this.QueryComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
