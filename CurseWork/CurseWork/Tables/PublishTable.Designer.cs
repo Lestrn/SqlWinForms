@@ -70,9 +70,9 @@
             this.PublishLabel.AutoSize = true;
             this.PublishLabel.Location = new System.Drawing.Point(6, 73);
             this.PublishLabel.Name = "PublishLabel";
-            this.PublishLabel.Size = new System.Drawing.Size(101, 16);
+            this.PublishLabel.Size = new System.Drawing.Size(95, 16);
             this.PublishLabel.TabIndex = 2;
-            this.PublishLabel.Text = "Издательство";
+            this.PublishLabel.Text = "Видавництво";
             // 
             // AddressLabel
             // 
@@ -135,11 +135,11 @@
             // 
             // Publish
             // 
-            this.Publish.Text = "Издательство";
+            this.Publish.Text = "Видавництво";
             // 
             // Address
             // 
-            this.Address.Text = "Адрес";
+            this.Address.Text = "Адреса";
             // 
             // Phone
             // 
@@ -160,7 +160,7 @@
             this.PublishGroupBox.Size = new System.Drawing.Size(350, 236);
             this.PublishGroupBox.TabIndex = 9;
             this.PublishGroupBox.TabStop = false;
-            this.PublishGroupBox.Text = "Издательство";
+            this.PublishGroupBox.Text = "Видавництво";
             // 
             // AddButton
             // 
@@ -168,7 +168,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(104, 23);
             this.AddButton.TabIndex = 10;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -178,7 +178,7 @@
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(110, 23);
             this.DeleteButton.TabIndex = 11;
-            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.Text = "Видалити";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -188,7 +188,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(105, 23);
             this.EditButton.TabIndex = 12;
-            this.EditButton.Text = "Изменить";
+            this.EditButton.Text = "Змінити";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
