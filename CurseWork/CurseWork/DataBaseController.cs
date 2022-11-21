@@ -16,29 +16,29 @@ namespace CurseWork
         {
             if (string.IsNullOrEmpty(TabelsComboBox.Text))
             {
-                MessageBox.Show("Вы должны выбрать таблицу!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Ви повинні вибрати таблицю!", "Error", MessageBoxButtons.OK);
                 return;
             }
-
+ 
             Form form = default;
             switch (TabelsComboBox.Text)
             {
-                case "Библиотека":
+                case "Бібліотека":
                     form = new LibraryTable();
                     break;
                 case "Журнал":
                     form = new MagazineTable();
                     break;
-                case "Читатели":
+                case "Читачі":
                     form = new ReadersTable();
                     break;
-                case "Издательство":
+                case "Видавництво":
                     form = new PublishTable();
                     break;
                 case "Автор":
                     form = new AuthorTable();
                     break;
-                case "Жанры":
+                case "Жанри":
                     form = new GenresTable();
                     break;
             }
@@ -50,7 +50,7 @@ namespace CurseWork
         {
             if (string.IsNullOrEmpty(QueryComboBox.Text))
             {
-                MessageBox.Show("Вы должны выбрать запрос!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Ви повинні вибрати запит!", "Error", MessageBoxButtons.OK);
                 return;
             }
 
