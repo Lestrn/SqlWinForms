@@ -31,48 +31,59 @@
             this.QueryTextBox = new System.Windows.Forms.TextBox();
             this.CaptionLabel = new System.Windows.Forms.Label();
             this.ExecuteButton = new System.Windows.Forms.Button();
+            this.FirstQueryViewList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // QueryTextBox
             // 
             this.QueryTextBox.Enabled = false;
-            this.QueryTextBox.Location = new System.Drawing.Point(2, 58);
-            this.QueryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.QueryTextBox.Location = new System.Drawing.Point(3, 71);
+            this.QueryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QueryTextBox.Multiline = true;
             this.QueryTextBox.Name = "QueryTextBox";
-            this.QueryTextBox.Size = new System.Drawing.Size(318, 60);
+            this.QueryTextBox.Size = new System.Drawing.Size(423, 73);
             this.QueryTextBox.TabIndex = 0;
             // 
             // CaptionLabel
             // 
             this.CaptionLabel.AutoSize = true;
             this.CaptionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.CaptionLabel.Location = new System.Drawing.Point(9, 15);
-            this.CaptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CaptionLabel.Location = new System.Drawing.Point(12, 18);
             this.CaptionLabel.Name = "CaptionLabel";
-            this.CaptionLabel.Size = new System.Drawing.Size(81, 26);
+            this.CaptionLabel.Size = new System.Drawing.Size(82, 31);
             this.CaptionLabel.TabIndex = 1;
-            this.CaptionLabel.Text = "Запрос";
+            this.CaptionLabel.Text = "Запит";
             // 
             // ExecuteButton
             // 
-            this.ExecuteButton.Location = new System.Drawing.Point(338, 55);
+            this.ExecuteButton.Location = new System.Drawing.Point(451, 68);
+            this.ExecuteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExecuteButton.Name = "ExecuteButton";
-            this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
+            this.ExecuteButton.Size = new System.Drawing.Size(100, 28);
             this.ExecuteButton.TabIndex = 2;
-            this.ExecuteButton.Text = "Выполнить";
+            this.ExecuteButton.Text = "Виконати";
             this.ExecuteButton.UseVisualStyleBackColor = true;
             this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
+            // FirstQueryViewList
+            // 
+            this.FirstQueryViewList.HideSelection = false;
+            this.FirstQueryViewList.Location = new System.Drawing.Point(3, 149);
+            this.FirstQueryViewList.Name = "FirstQueryViewList";
+            this.FirstQueryViewList.Size = new System.Drawing.Size(121, 97);
+            this.FirstQueryViewList.TabIndex = 3;
+            this.FirstQueryViewList.UseCompatibleStateImageBehavior = false;
+            // 
             // Query
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 363);
+            this.ClientSize = new System.Drawing.Size(633, 572);
+            this.Controls.Add(this.FirstQueryViewList);
             this.Controls.Add(this.ExecuteButton);
             this.Controls.Add(this.CaptionLabel);
             this.Controls.Add(this.QueryTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Query";
             this.Text = "Query";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
@@ -86,5 +97,6 @@
         private System.Windows.Forms.TextBox QueryTextBox;
         private System.Windows.Forms.Label CaptionLabel;
         private System.Windows.Forms.Button ExecuteButton;
+        private System.Windows.Forms.ListView FirstQueryViewList;
     }
 }
