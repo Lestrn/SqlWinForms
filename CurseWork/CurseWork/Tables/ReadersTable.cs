@@ -47,10 +47,10 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(ForAddTextBox.Text))
             {
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Читачі",
-                    new ColumnValue("Номер_читацького_квитка", "string", ForAddTextBox.Text),
-                    new ColumnValue("ПІБ_читача", "string", FIOTextBox.Text),
-                    new ColumnValue("Адреса_читача", "string", AdressTextBox.Text),
-                    new ColumnValue("Номер_телефона_читача", "string", PhoneTextBox.Text));
+                    new ColumnValuePair("Номер_читацького_квитка", "string", ForAddTextBox.Text),
+                    new ColumnValuePair("ПІБ_читача", "string", FIOTextBox.Text),
+                    new ColumnValuePair("Адреса_читача", "string", AdressTextBox.Text),
+                    new ColumnValuePair("Номер_телефона_читача", "string", PhoneTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
@@ -64,7 +64,7 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
-                string result = DatabaseHelper.DeleteRecordSqlQuery("Читачі", new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text));
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
@@ -77,11 +77,11 @@ namespace CurseWork
         {
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
-                string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
-                    new ColumnValue("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
-                    new ColumnValue("ПІБ_читача", "string", FIOTextBox.Text),
-                    new ColumnValue("Адреса_читача", "string", AdressTextBox.Text),
-                    new ColumnValue("Номер_телефона_читача", "string", PhoneTextBox.Text));
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
+                    new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
+                    new ColumnValuePair("ПІБ_читача", "string", FIOTextBox.Text),
+                    new ColumnValuePair("Адреса_читача", "string", AdressTextBox.Text),
+                    new ColumnValuePair("Номер_телефона_читача", "string", PhoneTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }

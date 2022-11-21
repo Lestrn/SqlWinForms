@@ -5,13 +5,13 @@ namespace CurseWork
 {
     public static class DatabaseHelper
     {
-        public static string DeleteRecordSqlQuery(string tableToDelete, ColumnValue whereCondition)
+        public static string DeleteRecordSqlQuery(string tableToDelete, ColumnValuePair whereCondition)
         {
             var sqlQuery = $"DELETE FROM {tableToDelete} WHERE {whereCondition.GetQueryValue()}";
             return sqlQuery;
         }
 
-        public static string UpdateRecordSqlQuery(string tableToUpdate, ColumnValue whereCondition, params ColumnValue[] columnValues)
+        public static string UpdateRecordSqlQuery(string tableToUpdate, ColumnValuePair whereCondition, params ColumnValuePair[] columnValues)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append($"UPDATE {tableToUpdate} SET ");
@@ -30,7 +30,7 @@ namespace CurseWork
             return sqlQuery;
         }
 
-        public static string CreateRecordSqlQuerry(string tableToAddNewRow, params ColumnValue[] columnValues)
+        public static string CreateRecordSqlQuerry(string tableToAddNewRow, params ColumnValuePair[] columnValues)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append($"INSERT INTO {tableToAddNewRow} (");
@@ -45,7 +45,7 @@ namespace CurseWork
                 stringBuilder.Append($"{columnValues[i].ColumnName}, ");
             }
 
-            foreach (ColumnValue columnValue in columnValues)
+            foreach (ColumnValuePair columnValue in columnValues)
             {
                 stringBuilder.Append($"{columnValue.GetValue()}, ");
             }
@@ -58,12 +58,12 @@ namespace CurseWork
             OleDbCommand dbCommand = new OleDbCommand(valueToSave, dbConnection);
             dbCommand.ExecuteNonQuery();
         }
-        public static ColumnValue[] GetColumnValues(string[] columsName, string[] types, string[] values)
+        public static ColumnValuePair[] GetColumnValues(string[] columsName, string[] types, string[] values)
         {
-            ColumnValue[] columnValues = new ColumnValue[values.Length];
+            ColumnValuePair[] columnValues = new ColumnValuePair[values.Length];
             for (int i = 0; i < columnValues.Length; i++)
             {
-                columnValues[i] = new ColumnValue(columsName[i], types[i], values[i]);
+                columnValues[i] = new ColumnValuePair(columsName[i], types[i], values[i]);
             }
             return columnValues;
         }

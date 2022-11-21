@@ -25,26 +25,26 @@ namespace CurseWork
         public void AddButton_Click(object sender, EventArgs e)
         {
             var sqlQuery = DatabaseHelper.CreateRecordSqlQuerry("Автори",
-                new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
-                new ColumnValue("ФІО", "string", PIBTextBox.Text),
-                new ColumnValue("Примітки", "string", NoteTextBox.Text));
+                new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValuePair("ФІО", "string", PIBTextBox.Text),
+                new ColumnValuePair("Примітки", "string", NoteTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }
 
         public void EditButton_Click(object sender, EventArgs e)
         {
-            var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Автори", new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
-                new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text),
-                new ColumnValue("ФІО", "string", PIBTextBox.Text),
-                new ColumnValue("Примітки", "string", NoteTextBox.Text));
+            var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Автори", new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
+                new ColumnValuePair("ФІО", "string", PIBTextBox.Text),
+                new ColumnValuePair("Примітки", "string", NoteTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
-            var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Автори", new ColumnValue("Код_автора", "int", CodeAuthorTextBox.Text));
+            var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Автори", new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
         }

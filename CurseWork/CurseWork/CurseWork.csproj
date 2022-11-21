@@ -70,7 +70,7 @@
     <Compile Include="Tables\AuthorTable.Designer.cs">
       <DependentUpon>AuthorTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ColumnValue.cs" />
+    <Compile Include="Helpers\ColumnValuePair.cs" />
     <Compile Include="DataBaseController.cs">
       <SubType>Form</SubType>
     </Compile>
