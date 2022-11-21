@@ -80,7 +80,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 0;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -91,7 +91,7 @@
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 1;
-            this.RemoveButton.Text = "Удалить";
+            this.RemoveButton.Text = "Видалити";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -102,7 +102,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 2;
-            this.EditButton.Text = "Редактировать";
+            this.EditButton.Text = "Редагувати";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -112,9 +112,9 @@
             this.BookNameLabel.Location = new System.Drawing.Point(5, 32);
             this.BookNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BookNameLabel.Name = "BookNameLabel";
-            this.BookNameLabel.Size = new System.Drawing.Size(89, 13);
+            this.BookNameLabel.Size = new System.Drawing.Size(71, 13);
             this.BookNameLabel.TabIndex = 0;
-            this.BookNameLabel.Text = "Название книги";
+            this.BookNameLabel.Text = "Назва книги";
             // 
             // AuthorLabel
             // 
@@ -132,9 +132,9 @@
             this.DayOutLabel.Location = new System.Drawing.Point(4, 98);
             this.DayOutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DayOutLabel.Name = "DayOutLabel";
-            this.DayOutLabel.Size = new System.Drawing.Size(98, 13);
+            this.DayOutLabel.Size = new System.Drawing.Size(73, 13);
             this.DayOutLabel.TabIndex = 3;
-            this.DayOutLabel.Text = "Год издательства";
+            this.DayOutLabel.Text = "Рік публікації";
             // 
             // GenreLabel
             // 
@@ -152,9 +152,9 @@
             this.label4.Location = new System.Drawing.Point(5, 164);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Photo";
+            this.label4.Text = "Обкладинка";
             // 
             // CodeLabel
             // 
@@ -172,9 +172,9 @@
             this.CostLabel.Location = new System.Drawing.Point(5, 220);
             this.CostLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CostLabel.Name = "CostLabel";
-            this.CostLabel.Size = new System.Drawing.Size(33, 13);
+            this.CostLabel.Size = new System.Drawing.Size(29, 13);
             this.CostLabel.TabIndex = 7;
-            this.CostLabel.Text = "Цена";
+            this.CostLabel.Text = "Ціна";
             // 
             // AmountLabel
             // 
@@ -182,9 +182,9 @@
             this.AmountLabel.Location = new System.Drawing.Point(5, 249);
             this.AmountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(66, 13);
+            this.AmountLabel.Size = new System.Drawing.Size(53, 13);
             this.AmountLabel.TabIndex = 8;
-            this.AmountLabel.Text = "Количество";
+            this.AmountLabel.Text = "Кількість";
             // 
             // NewDayOutLabel
             // 
@@ -194,7 +194,7 @@
             this.NewDayOutLabel.Name = "NewDayOutLabel";
             this.NewDayOutLabel.Size = new System.Drawing.Size(84, 13);
             this.NewDayOutLabel.TabIndex = 9;
-            this.NewDayOutLabel.Text = "Новое издание";
+            this.NewDayOutLabel.Text = "Нове видання?";
             // 
             // DescriptionLabel
             // 
@@ -202,9 +202,9 @@
             this.DescriptionLabel.Location = new System.Drawing.Point(5, 319);
             this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(57, 13);
+            this.DescriptionLabel.Size = new System.Drawing.Size(33, 13);
             this.DescriptionLabel.TabIndex = 10;
-            this.DescriptionLabel.Text = "Описание";
+            this.DescriptionLabel.Text = "Опис";
             // 
             // KeyWordsLabel
             // 
@@ -212,9 +212,9 @@
             this.KeyWordsLabel.Location = new System.Drawing.Point(4, 351);
             this.KeyWordsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.KeyWordsLabel.Name = "KeyWordsLabel";
-            this.KeyWordsLabel.Size = new System.Drawing.Size(92, 13);
+            this.KeyWordsLabel.Size = new System.Drawing.Size(80, 13);
             this.KeyWordsLabel.TabIndex = 11;
-            this.KeyWordsLabel.Text = "Ключивые слова";
+            this.KeyWordsLabel.Text = "Ключові слова";
             // 
             // DayOutTextBox
             // 
@@ -420,7 +420,7 @@
             this.LibraryGroupBox.Size = new System.Drawing.Size(604, 379);
             this.LibraryGroupBox.TabIndex = 3;
             this.LibraryGroupBox.TabStop = false;
-            this.LibraryGroupBox.Text = "Библиотека";
+            this.LibraryGroupBox.Text = "Бібліотека";
             this.LibraryGroupBox.Visible = false;
             // 
             // GenresComboBox
