@@ -69,16 +69,16 @@
             this.ReaderGroupBox.Size = new System.Drawing.Size(352, 407);
             this.ReaderGroupBox.TabIndex = 5;
             this.ReaderGroupBox.TabStop = false;
-            this.ReaderGroupBox.Text = "Читатель";
+            this.ReaderGroupBox.Text = "Читатач";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.Size = new System.Drawing.Size(105, 16);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Для добавления";
+            this.label1.Text = "Для додавання";
             // 
             // ForAddTextBox
             // 
@@ -126,27 +126,27 @@
             this.AdressLabel.AutoSize = true;
             this.AdressLabel.Location = new System.Drawing.Point(6, 125);
             this.AdressLabel.Name = "AdressLabel";
-            this.AdressLabel.Size = new System.Drawing.Size(111, 16);
+            this.AdressLabel.Size = new System.Drawing.Size(97, 16);
             this.AdressLabel.TabIndex = 4;
-            this.AdressLabel.Text = "Адрес читателя";
+            this.AdressLabel.Text = "Адрес читача";
             // 
             // NumberReaderLabel
             // 
             this.NumberReaderLabel.AutoSize = true;
             this.NumberReaderLabel.Location = new System.Drawing.Point(6, 28);
             this.NumberReaderLabel.Name = "NumberReaderLabel";
-            this.NumberReaderLabel.Size = new System.Drawing.Size(200, 16);
+            this.NumberReaderLabel.Size = new System.Drawing.Size(176, 16);
             this.NumberReaderLabel.TabIndex = 3;
-            this.NumberReaderLabel.Text = "Номер читетельского билета";
+            this.NumberReaderLabel.Text = "Номер читацького квитка";
             // 
             // FIOLabel
             // 
             this.FIOLabel.AutoSize = true;
             this.FIOLabel.Location = new System.Drawing.Point(6, 99);
             this.FIOLabel.Name = "FIOLabel";
-            this.FIOLabel.Size = new System.Drawing.Size(44, 16);
+            this.FIOLabel.Size = new System.Drawing.Size(32, 16);
             this.FIOLabel.TabIndex = 2;
-            this.FIOLabel.Text = "ФИО: ";
+            this.FIOLabel.Text = "ПІБ:";
             // 
             // FIOTextBox
             // 
@@ -194,7 +194,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(104, 23);
             this.AddButton.TabIndex = 7;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -204,7 +204,7 @@
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(110, 23);
             this.DeleteButton.TabIndex = 8;
-            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.Text = "Видалити";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -214,7 +214,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(105, 23);
             this.EditButton.TabIndex = 9;
-            this.EditButton.Text = "Изменить";
+            this.EditButton.Text = "Змінити";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
