@@ -32,13 +32,13 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.GenresGroupBox = new System.Windows.Forms.GroupBox();
-            this.CodeGenreLabel = new System.Windows.Forms.Label();
-            this.GenreLabel = new System.Windows.Forms.Label();
-            this.CodeGenreTextBox = new System.Windows.Forms.TextBox();
-            this.GenreTextBox = new System.Windows.Forms.TextBox();
             this.GenresListView = new System.Windows.Forms.ListView();
             this.CodeGenre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GenreTextBox = new System.Windows.Forms.TextBox();
+            this.CodeGenreTextBox = new System.Windows.Forms.TextBox();
+            this.GenreLabel = new System.Windows.Forms.Label();
+            this.CodeGenreLabel = new System.Windows.Forms.Label();
             this.GenresGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -60,7 +60,7 @@
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 2;
-            this.RemoveButton.Text = "Удалить";
+            this.RemoveButton.Text = "Видалити";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -71,7 +71,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 3;
-            this.EditButton.Text = "Редактировать";
+            this.EditButton.Text = "Редагувати";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -87,38 +87,6 @@
             this.GenresGroupBox.Size = new System.Drawing.Size(528, 294);
             this.GenresGroupBox.TabIndex = 4;
             this.GenresGroupBox.TabStop = false;
-            // 
-            // CodeGenreLabel
-            // 
-            this.CodeGenreLabel.AutoSize = true;
-            this.CodeGenreLabel.Location = new System.Drawing.Point(39, 32);
-            this.CodeGenreLabel.Name = "CodeGenreLabel";
-            this.CodeGenreLabel.Size = new System.Drawing.Size(61, 13);
-            this.CodeGenreLabel.TabIndex = 0;
-            this.CodeGenreLabel.Text = "Код жанра";
-            // 
-            // GenreLabel
-            // 
-            this.GenreLabel.AutoSize = true;
-            this.GenreLabel.Location = new System.Drawing.Point(39, 61);
-            this.GenreLabel.Name = "GenreLabel";
-            this.GenreLabel.Size = new System.Drawing.Size(36, 13);
-            this.GenreLabel.TabIndex = 1;
-            this.GenreLabel.Text = "Жанр";
-            // 
-            // CodeGenreTextBox
-            // 
-            this.CodeGenreTextBox.Location = new System.Drawing.Point(106, 25);
-            this.CodeGenreTextBox.Name = "CodeGenreTextBox";
-            this.CodeGenreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CodeGenreTextBox.TabIndex = 2;
-            // 
-            // GenreTextBox
-            // 
-            this.GenreTextBox.Location = new System.Drawing.Point(106, 61);
-            this.GenreTextBox.Name = "GenreTextBox";
-            this.GenreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.GenreTextBox.TabIndex = 3;
             // 
             // GenresListView
             // 
@@ -141,6 +109,38 @@
             // Genre
             // 
             this.Genre.Text = "Жанр";
+            // 
+            // GenreTextBox
+            // 
+            this.GenreTextBox.Location = new System.Drawing.Point(106, 61);
+            this.GenreTextBox.Name = "GenreTextBox";
+            this.GenreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.GenreTextBox.TabIndex = 3;
+            // 
+            // CodeGenreTextBox
+            // 
+            this.CodeGenreTextBox.Location = new System.Drawing.Point(106, 25);
+            this.CodeGenreTextBox.Name = "CodeGenreTextBox";
+            this.CodeGenreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CodeGenreTextBox.TabIndex = 2;
+            // 
+            // GenreLabel
+            // 
+            this.GenreLabel.AutoSize = true;
+            this.GenreLabel.Location = new System.Drawing.Point(39, 61);
+            this.GenreLabel.Name = "GenreLabel";
+            this.GenreLabel.Size = new System.Drawing.Size(36, 13);
+            this.GenreLabel.TabIndex = 1;
+            this.GenreLabel.Text = "Жанр";
+            // 
+            // CodeGenreLabel
+            // 
+            this.CodeGenreLabel.AutoSize = true;
+            this.CodeGenreLabel.Location = new System.Drawing.Point(39, 32);
+            this.CodeGenreLabel.Name = "CodeGenreLabel";
+            this.CodeGenreLabel.Size = new System.Drawing.Size(61, 13);
+            this.CodeGenreLabel.TabIndex = 0;
+            this.CodeGenreLabel.Text = "Код жанра";
             // 
             // GenresTable
             // 

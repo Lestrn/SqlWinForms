@@ -85,7 +85,7 @@
             // 
             // Note
             // 
-            this.Note.Text = "Заметка";
+            this.Note.Text = "Примітки";
             // 
             // NoteTextBox
             // 
@@ -99,9 +99,9 @@
             this.NoteLabel.AutoSize = true;
             this.NoteLabel.Location = new System.Drawing.Point(29, 131);
             this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(51, 13);
+            this.NoteLabel.Size = new System.Drawing.Size(54, 13);
             this.NoteLabel.TabIndex = 4;
-            this.NoteLabel.Text = "Заметка";
+            this.NoteLabel.Text = "Примітки";
             // 
             // PIBLabel
             // 
@@ -142,7 +142,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(93, 24);
             this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Добавить";
+            this.AddButton.Text = "Додати";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -153,7 +153,7 @@
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(93, 24);
             this.RemoveButton.TabIndex = 2;
-            this.RemoveButton.Text = "Удалить";
+            this.RemoveButton.Text = "Видалити";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -164,7 +164,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(93, 24);
             this.EditButton.TabIndex = 3;
-            this.EditButton.Text = "Редактировать";
+            this.EditButton.Text = "Редагувати";
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
