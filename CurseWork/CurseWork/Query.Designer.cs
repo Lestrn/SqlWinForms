@@ -31,7 +31,7 @@
             this.QueryTextBox = new System.Windows.Forms.TextBox();
             this.CaptionLabel = new System.Windows.Forms.Label();
             this.ExecuteButton = new System.Windows.Forms.Button();
-            this.FirstQueryViewList = new System.Windows.Forms.ListView();
+            this.QueryListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // QueryTextBox
@@ -57,7 +57,7 @@
             // ExecuteButton
             // 
             this.ExecuteButton.Location = new System.Drawing.Point(451, 68);
-            this.ExecuteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExecuteButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExecuteButton.Name = "ExecuteButton";
             this.ExecuteButton.Size = new System.Drawing.Size(100, 28);
             this.ExecuteButton.TabIndex = 2;
@@ -65,21 +65,22 @@
             this.ExecuteButton.UseVisualStyleBackColor = true;
             this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
-            // FirstQueryViewList
+            // QueryListView
             // 
-            this.FirstQueryViewList.HideSelection = false;
-            this.FirstQueryViewList.Location = new System.Drawing.Point(3, 149);
-            this.FirstQueryViewList.Name = "FirstQueryViewList";
-            this.FirstQueryViewList.Size = new System.Drawing.Size(121, 97);
-            this.FirstQueryViewList.TabIndex = 3;
-            this.FirstQueryViewList.UseCompatibleStateImageBehavior = false;
+            this.QueryListView.HideSelection = false;
+            this.QueryListView.Location = new System.Drawing.Point(3, 149);
+            this.QueryListView.Name = "QueryListView";
+            this.QueryListView.Size = new System.Drawing.Size(423, 347);
+            this.QueryListView.TabIndex = 3;
+            this.QueryListView.UseCompatibleStateImageBehavior = false;
+            this.QueryListView.View = System.Windows.Forms.View.Details;
             // 
             // Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 572);
-            this.Controls.Add(this.FirstQueryViewList);
+            this.Controls.Add(this.QueryListView);
             this.Controls.Add(this.ExecuteButton);
             this.Controls.Add(this.CaptionLabel);
             this.Controls.Add(this.QueryTextBox);
@@ -87,6 +88,7 @@
             this.Name = "Query";
             this.Text = "Query";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,6 +99,6 @@
         private System.Windows.Forms.TextBox QueryTextBox;
         private System.Windows.Forms.Label CaptionLabel;
         private System.Windows.Forms.Button ExecuteButton;
-        private System.Windows.Forms.ListView FirstQueryViewList;
+        private System.Windows.Forms.ListView QueryListView;
     }
 }

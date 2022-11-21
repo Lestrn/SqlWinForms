@@ -53,5 +53,14 @@ namespace CurseWork
                 }
             }
         }
+
+        public static void RebuildListView(ListView listView, params string[] columns)
+        {
+            listView.Clear();
+            for (int i = 0; i < columns.Length; i++)
+            {
+                listView.Columns.Add(columns[i]);
+            }
+        }
     }
 }
