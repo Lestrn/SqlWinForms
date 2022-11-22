@@ -68,8 +68,8 @@
             this.LibraryGroupBox = new System.Windows.Forms.GroupBox();
             this.GenresComboBox = new System.Windows.Forms.ComboBox();
             this.PublishComboBox = new System.Windows.Forms.ComboBox();
-            this.CodeUDKComboBox = new System.Windows.Forms.ComboBox();
             this.AuthorComboBox = new System.Windows.Forms.ComboBox();
+            this.CodeUDKTextBox = new System.Windows.Forms.TextBox();
             this.LibraryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -387,9 +387,9 @@
             // 
             // LibraryGroupBox
             // 
+            this.LibraryGroupBox.Controls.Add(this.CodeUDKTextBox);
             this.LibraryGroupBox.Controls.Add(this.GenresComboBox);
             this.LibraryGroupBox.Controls.Add(this.PublishComboBox);
-            this.LibraryGroupBox.Controls.Add(this.CodeUDKComboBox);
             this.LibraryGroupBox.Controls.Add(this.AuthorComboBox);
             this.LibraryGroupBox.Controls.Add(this.PublishLabel);
             this.LibraryGroupBox.Controls.Add(this.UploadPhotoButton);
@@ -439,14 +439,6 @@
             this.PublishComboBox.Size = new System.Drawing.Size(121, 21);
             this.PublishComboBox.TabIndex = 27;
             // 
-            // CodeUDKComboBox
-            // 
-            this.CodeUDKComboBox.FormattingEnabled = true;
-            this.CodeUDKComboBox.Location = new System.Drawing.Point(75, 189);
-            this.CodeUDKComboBox.Name = "CodeUDKComboBox";
-            this.CodeUDKComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CodeUDKComboBox.TabIndex = 26;
-            // 
             // AuthorComboBox
             // 
             this.AuthorComboBox.FormattingEnabled = true;
@@ -454,6 +446,13 @@
             this.AuthorComboBox.Name = "AuthorComboBox";
             this.AuthorComboBox.Size = new System.Drawing.Size(121, 21);
             this.AuthorComboBox.TabIndex = 25;
+            // 
+            // CodeUDKTextBox
+            // 
+            this.CodeUDKTextBox.Location = new System.Drawing.Point(66, 190);
+            this.CodeUDKTextBox.Name = "CodeUDKTextBox";
+            this.CodeUDKTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CodeUDKTextBox.TabIndex = 4;
             // 
             // LibraryTable
             // 
@@ -516,8 +515,8 @@
         private System.Windows.Forms.Label PublishLabel;
         private System.Windows.Forms.GroupBox LibraryGroupBox;
         private System.Windows.Forms.ComboBox AuthorComboBox;
-        private System.Windows.Forms.ComboBox CodeUDKComboBox;
         private System.Windows.Forms.ComboBox PublishComboBox;
         private System.Windows.Forms.ComboBox GenresComboBox;
+        private System.Windows.Forms.TextBox CodeUDKTextBox;
     }
 }

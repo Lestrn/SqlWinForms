@@ -25,7 +25,6 @@ namespace CurseWork
             LibraryListView.FullRowSelect = true;
             FormService.UpdateListViewWithDB(LibraryListView, DbConnection, "SELECT * FROM Бібліотека", 12);
             FormService.LoadComboBoxFromDB(AuthorComboBox, DbConnection, "SELECT Код_автора FROM Автори");
-            FormService.LoadComboBoxFromDB(CodeUDKComboBox, DbConnection, "SELECT Код_УДК FROM Журнал");
             FormService.LoadComboBoxFromDB(PublishComboBox, DbConnection, "SELECT Код FROM Видавництво");
             FormService.LoadComboBoxFromDB(GenresComboBox, DbConnection, "SELECT Код_жанра FROM Жанри");
         }
@@ -73,8 +72,8 @@ namespace CurseWork
                 DescriptionTextBox.Text = listView.SubItems[10].Text;
                 KeyWordsTextBox.Text = listView.SubItems[11].Text;
                 Img64BaseString = listView.SubItems[4].Text;
+                CodeUDKTextBox.Text = listView.SubItems[5].Text;
                 FormService.SelectRowInComboBox(AuthorComboBox, listView.SubItems[1].Text);
-                FormService.SelectRowInComboBox(CodeUDKComboBox, listView.SubItems[5].Text);
                 FormService.SelectRowInComboBox(PublishComboBox, listView.SubItems[6].Text);
                 FormService.SelectRowInComboBox(GenresComboBox, listView.SubItems[3].Text);
                 FormService.SelectRowInComboBox(NewDayOutComboBox, listView.SubItems[9].Text);
@@ -97,7 +96,7 @@ namespace CurseWork
                 new ColumnValuePair("Рік_видання", "int", DayOutTextBox.Text),
                 new ColumnValuePair("Код_жанру", "int", GenresComboBox.Text),
                 new ColumnValuePair("Обкладинка", "string", Img64BaseString),
-                new ColumnValuePair("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValuePair("Код_УДК", "string", CodeUDKTextBox.Text),
                 new ColumnValuePair("Код_видавництва", "int", PublishComboBox.Text),
                 new ColumnValuePair("Ціна", "decimal", CostTextBox.Text),
                 new ColumnValuePair("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
@@ -124,7 +123,8 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!FormService.IsValidData(BookNameTextBox, AuthorComboBox, DayOutTextBox, GenresComboBox, PublishComboBox, CostTextBox, AmountTextBox, NewDayOutComboBox, DescriptionTextBox, KeyWordsTextBox))
+            if (!FormService.IsValidData(BookNameTextBox, AuthorComboBox, DayOutTextBox, GenresComboBox, PublishComboBox,
+                CostTextBox, AmountTextBox, NewDayOutComboBox, DescriptionTextBox, KeyWordsTextBox, CodeUDKTextBox))
             {
                 MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
                 return;
@@ -137,7 +137,7 @@ namespace CurseWork
                 new ColumnValuePair("Рік_видання", "int", DayOutTextBox.Text),
                 new ColumnValuePair("Код_жанру", "int", GenresComboBox.Text),
                 new ColumnValuePair("Обкладинка", "string", Img64BaseString),
-                new ColumnValuePair("Код_УДК", "string", CodeUDKComboBox.Text),
+                new ColumnValuePair("Код_УДК", "string", CodeUDKTextBox.Text),
                 new ColumnValuePair("Код_видавництва", "int", PublishComboBox.Text),
                 new ColumnValuePair("Ціна", "decimal", CostTextBox.Text),
                 new ColumnValuePair("Кількість_у_бібліотеці", "int", AmountTextBox.Text),
