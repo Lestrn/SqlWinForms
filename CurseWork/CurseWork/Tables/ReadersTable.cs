@@ -25,7 +25,6 @@ namespace CurseWork
         {
             ReadersListView.FullRowSelect = true;
             FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
-            FormService.LoadComboBoxFromDB(NumberReaderComboBox, DbConnection, "SELECT Номер_читацького_квитка FROM Читачі");
         }
 
         public void TableListViewItem_Selected(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace CurseWork
                 FIOTextBox.Text = listView.SubItems[1].Text;
                 AdressTextBox.Text = listView.SubItems[2].Text;
                 PhoneTextBox.Text = listView.SubItems[3].Text;
-                FormService.SelectRowInComboBox(NumberReaderComboBox, listView.SubItems[0].Text);
+                ForAddTextBox.Text = listView.SubItems[0].Text;
             }
             catch { }
 
@@ -61,9 +60,9 @@ namespace CurseWork
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
+            if (!string.IsNullOrEmpty(ForAddTextBox.Text))
             {
-                string result = DatabaseHelper.DeleteRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text));
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", ForAddTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
             }
@@ -74,14 +73,14 @@ namespace CurseWork
         }
         public void EditButton_Click(object sender, EventArgs e)
         {
-            if (!FormService.IsValidData(NumberReaderComboBox, FIOTextBox, AdressTextBox, PhoneTextBox))
+            if (!FormService.IsValidData(ForAddTextBox, FIOTextBox, AdressTextBox, PhoneTextBox))
             {
                 MessageBox.Show("Усі поля повинні бути заповненими");
                 return;
             }
             
-                string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
-                    new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", ForAddTextBox.Text),
+                    new ColumnValuePair("Номер_читацького_квитка", "string", ForAddTextBox.Text),
                     new ColumnValuePair("ПІБ_читача", "string", FIOTextBox.Text),
                     new ColumnValuePair("Адреса_читача", "string", AdressTextBox.Text),
                     new ColumnValuePair("Номер_телефона_читача", "string", PhoneTextBox.Text));

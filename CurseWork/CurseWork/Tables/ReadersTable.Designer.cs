@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.ReaderGroupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ForAddTextBox = new System.Windows.Forms.TextBox();
-            this.NumberReaderComboBox = new System.Windows.Forms.ComboBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.AdressTextBox = new System.Windows.Forms.TextBox();
             this.PhoneLabel = new System.Windows.Forms.Label();
@@ -52,9 +50,7 @@
             // 
             // ReaderGroupBox
             // 
-            this.ReaderGroupBox.Controls.Add(this.label1);
             this.ReaderGroupBox.Controls.Add(this.ForAddTextBox);
-            this.ReaderGroupBox.Controls.Add(this.NumberReaderComboBox);
             this.ReaderGroupBox.Controls.Add(this.PhoneTextBox);
             this.ReaderGroupBox.Controls.Add(this.AdressTextBox);
             this.ReaderGroupBox.Controls.Add(this.PhoneLabel);
@@ -71,30 +67,13 @@
             this.ReaderGroupBox.TabStop = false;
             this.ReaderGroupBox.Text = "Читатач";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Для додавання";
-            // 
             // ForAddTextBox
             // 
-            this.ForAddTextBox.Location = new System.Drawing.Point(212, 54);
+            this.ForAddTextBox.Location = new System.Drawing.Point(210, 22);
             this.ForAddTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ForAddTextBox.Name = "ForAddTextBox";
             this.ForAddTextBox.Size = new System.Drawing.Size(95, 22);
             this.ForAddTextBox.TabIndex = 11;
-            // 
-            // NumberReaderComboBox
-            // 
-            this.NumberReaderComboBox.FormattingEnabled = true;
-            this.NumberReaderComboBox.Location = new System.Drawing.Point(212, 25);
-            this.NumberReaderComboBox.Name = "NumberReaderComboBox";
-            this.NumberReaderComboBox.Size = new System.Drawing.Size(121, 24);
-            this.NumberReaderComboBox.TabIndex = 10;
             // 
             // PhoneTextBox
             // 
@@ -256,8 +235,6 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.ComboBox NumberReaderComboBox;
         private System.Windows.Forms.TextBox ForAddTextBox;
-        private System.Windows.Forms.Label label1;
     }
 }

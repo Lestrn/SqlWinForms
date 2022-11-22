@@ -26,14 +26,14 @@ namespace CurseWork
         private string[] values = new string[4];
         private void FillValues()
         {
-            values[0] = CodeComboBox.Text;
+            values[0] = CodeTextBox.Text;
             values[1] = PublishTextBox.Text;
             values[2] = AddressTextBox.Text;
             values[3] = PhoneTextBox.Text;
         }
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!FormService.IsValidData(CodeComboBox, PhoneTextBox, AddressTextBox, PublishTextBox))
+            if (!FormService.IsValidData(CodeTextBox, PhoneTextBox, AddressTextBox, PublishTextBox))
             {
                 MessageBox.Show("Усі поля повинні бути заповненими");
                 return;
@@ -46,9 +46,9 @@ namespace CurseWork
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CodeComboBox.Text))
+            if (!string.IsNullOrEmpty(CodeTextBox.Text))
             {
-                string result = DatabaseHelper.DeleteRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeComboBox.Text));
+                string result = DatabaseHelper.DeleteRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
             }
@@ -60,14 +60,14 @@ namespace CurseWork
 
         public void EditButton_Click(object sender, EventArgs e)
         {
-            if (!FormService.IsValidData(CodeComboBox, PhoneTextBox, AddressTextBox, PublishTextBox))
+            if (!FormService.IsValidData(CodeTextBox, PhoneTextBox, AddressTextBox, PublishTextBox))
             {
                 MessageBox.Show("Усі поля повинні бути заповненими");
                 return;
             }
           
                 FillValues();
-                string result = DatabaseHelper.UpdateRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeComboBox.Text), DatabaseHelper.GetColumnValues(columnNames, types, values));
+                string result = DatabaseHelper.UpdateRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeTextBox.Text), DatabaseHelper.GetColumnValues(columnNames, types, values));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
             
@@ -77,7 +77,7 @@ namespace CurseWork
         {
             PublishListView.FullRowSelect = true;
             FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
-            FormService.LoadComboBoxFromDB(CodeComboBox, DbConnection, "SELECT Код FROM Видавництво");
+         
         }
 
         public void Table_Closed(object sender, FormClosedEventArgs e)
@@ -93,7 +93,7 @@ namespace CurseWork
                 PublishTextBox.Text = listView.SubItems[1].Text;
                 AddressTextBox.Text = listView.SubItems[2].Text;
                 PhoneTextBox.Text = listView.SubItems[3].Text;
-                FormService.SelectRowInComboBox(CodeComboBox, listView.SubItems[0].Text);
+                CodeTextBox.Text = listView.SubItems[0].Text;
             }
             catch { }
         }

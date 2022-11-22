@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.MagazineGroupBox = new System.Windows.Forms.GroupBox();
-            this.AddNumberReaderLabel = new System.Windows.Forms.Label();
-            this.AddNumberReaderTextBox = new System.Windows.Forms.TextBox();
             this.NumberReaderComboBox = new System.Windows.Forms.ComboBox();
             this.CodeNumberTextBox = new System.Windows.Forms.TextBox();
             this.NumberReaderLabel = new System.Windows.Forms.Label();
@@ -49,8 +47,6 @@
             // 
             // MagazineGroupBox
             // 
-            this.MagazineGroupBox.Controls.Add(this.AddNumberReaderLabel);
-            this.MagazineGroupBox.Controls.Add(this.AddNumberReaderTextBox);
             this.MagazineGroupBox.Controls.Add(this.NumberReaderComboBox);
             this.MagazineGroupBox.Controls.Add(this.CodeNumberTextBox);
             this.MagazineGroupBox.Controls.Add(this.NumberReaderLabel);
@@ -65,23 +61,6 @@
             this.MagazineGroupBox.TabIndex = 6;
             this.MagazineGroupBox.TabStop = false;
             this.MagazineGroupBox.Text = "Журнал";
-            // 
-            // AddNumberReaderLabel
-            // 
-            this.AddNumberReaderLabel.AutoSize = true;
-            this.AddNumberReaderLabel.Location = new System.Drawing.Point(-3, 164);
-            this.AddNumberReaderLabel.Name = "AddNumberReaderLabel";
-            this.AddNumberReaderLabel.Size = new System.Drawing.Size(89, 16);
-            this.AddNumberReaderLabel.TabIndex = 10;
-            this.AddNumberReaderLabel.Text = "Для додання";
-            // 
-            // AddNumberReaderTextBox
-            // 
-            this.AddNumberReaderTextBox.Location = new System.Drawing.Point(0, 192);
-            this.AddNumberReaderTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddNumberReaderTextBox.Name = "AddNumberReaderTextBox";
-            this.AddNumberReaderTextBox.Size = new System.Drawing.Size(95, 22);
-            this.AddNumberReaderTextBox.TabIndex = 9;
             // 
             // NumberReaderComboBox
             // 
@@ -222,8 +201,6 @@
         private System.Windows.Forms.GroupBox MagazineGroupBox;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.TextBox StatusTextBox;
-        private System.Windows.Forms.Label AddNumberReaderLabel;
-        private System.Windows.Forms.TextBox AddNumberReaderTextBox;
         private System.Windows.Forms.ComboBox NumberReaderComboBox;
         private System.Windows.Forms.TextBox CodeNumberTextBox;
         private System.Windows.Forms.Label NumberReaderLabel;

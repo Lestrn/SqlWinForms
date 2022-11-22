@@ -46,24 +46,24 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!FormService.IsValidData(CodeNumberTextBox, StatusTextBox, AddNumberReaderTextBox))
+            if (!FormService.IsValidData(CodeNumberTextBox, StatusTextBox, NumberReaderComboBox))
             {
                 MessageBox.Show("Усі поля повинні бути заповненими");
                 return;
             }
     
-                FillValuesArr(true);
+                FillValuesArr();
                 ColumnValuePair[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Журнал", columnValues);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
             
         }
-        private void FillValuesArr(bool add = false)
+        private void FillValuesArr()
         {
             values[0] = CodeNumberTextBox.Text;
             values[1] = StatusTextBox.Text;
-            values[2] = add ? AddNumberReaderTextBox.Text : NumberReaderComboBox.Text;
+            values[2] = NumberReaderComboBox.Text;
 
         }
         public void EditButton_Click(object sender, EventArgs e)

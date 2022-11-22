@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CodeComboBox = new System.Windows.Forms.ComboBox();
             this.CodeLabel = new System.Windows.Forms.Label();
             this.PublishLabel = new System.Windows.Forms.Label();
             this.AddressLabel = new System.Windows.Forms.Label();
@@ -45,16 +44,9 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.CodeTextBox = new System.Windows.Forms.TextBox();
             this.PublishGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // CodeComboBox
-            // 
-            this.CodeComboBox.FormattingEnabled = true;
-            this.CodeComboBox.Location = new System.Drawing.Point(75, 26);
-            this.CodeComboBox.Name = "CodeComboBox";
-            this.CodeComboBox.Size = new System.Drawing.Size(121, 24);
-            this.CodeComboBox.TabIndex = 0;
             // 
             // CodeLabel
             // 
@@ -147,8 +139,8 @@
             // 
             // PublishGroupBox
             // 
+            this.PublishGroupBox.Controls.Add(this.CodeTextBox);
             this.PublishGroupBox.Controls.Add(this.CodeLabel);
-            this.PublishGroupBox.Controls.Add(this.CodeComboBox);
             this.PublishGroupBox.Controls.Add(this.PhoneLabel);
             this.PublishGroupBox.Controls.Add(this.PhoneTextBox);
             this.PublishGroupBox.Controls.Add(this.PublishLabel);
@@ -192,6 +184,13 @@
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
+            // CodeTextBox
+            // 
+            this.CodeTextBox.Location = new System.Drawing.Point(91, 31);
+            this.CodeTextBox.Name = "CodeTextBox";
+            this.CodeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CodeTextBox.TabIndex = 8;
+            // 
             // PublishTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,8 +212,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CodeComboBox;
         private System.Windows.Forms.Label CodeLabel;
         private System.Windows.Forms.Label PublishLabel;
         private System.Windows.Forms.Label AddressLabel;
@@ -231,5 +228,6 @@
         private System.Windows.Forms.ColumnHeader Address;
         private System.Windows.Forms.ColumnHeader Phone;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.TextBox CodeTextBox;
     }
 }
