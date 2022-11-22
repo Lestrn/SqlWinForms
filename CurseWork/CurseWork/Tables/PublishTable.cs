@@ -33,17 +33,15 @@ namespace CurseWork
         }
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CodeComboBox.Text))
+            if (!FormService.IsValidData(CodeComboBox, PhoneTextBox, AddressTextBox, PublishTextBox))
             {
-                FillValues();
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
+            FillValues();
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Видавництво", DatabaseHelper.GetColumnValues(columnNames, types, values));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
-            }
-            else
-            {
-                MessageBox.Show("Код повинен бути заповненим!");
-            }
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
@@ -62,13 +60,17 @@ namespace CurseWork
 
         public void EditButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CodeComboBox.Text))
+            if (!FormService.IsValidData(CodeComboBox, PhoneTextBox, AddressTextBox, PublishTextBox))
             {
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
+          
                 FillValues();
                 string result = DatabaseHelper.UpdateRecordSqlQuery("Видавництво", new ColumnValuePair("Код", "int", CodeComboBox.Text), DatabaseHelper.GetColumnValues(columnNames, types, values));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(PublishListView, DbConnection, "SELECT * FROM Видавництво", 4);
-            }
+            
         }
 
         public void TableForm_Load(object sender, EventArgs e)
