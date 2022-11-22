@@ -44,8 +44,11 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ForAddTextBox.Text))
+            if(!FormService.IsValidData(ForAddTextBox, FIOTextBox, AdressTextBox, PhoneTextBox))
             {
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Читачі",
                     new ColumnValuePair("Номер_читацького_квитка", "string", ForAddTextBox.Text),
                     new ColumnValuePair("ПІБ_читача", "string", FIOTextBox.Text),
@@ -53,11 +56,7 @@ namespace CurseWork
                     new ColumnValuePair("Номер_телефона_читача", "string", PhoneTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
-            }
-            else
-            {
-                MessageBox.Show("Номер читацького квитка повинен бути заповненим!");
-            }
+            
         }
 
         public void RemoveButton_Click(object sender, EventArgs e)
@@ -75,8 +74,12 @@ namespace CurseWork
         }
         public void EditButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
+            if (!FormService.IsValidData(NumberReaderComboBox, FIOTextBox, AdressTextBox, PhoneTextBox))
             {
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
+            
                 string result = DatabaseHelper.UpdateRecordSqlQuery("Читачі", new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
                     new ColumnValuePair("Номер_читацького_квитка", "string", NumberReaderComboBox.Text),
                     new ColumnValuePair("ПІБ_читача", "string", FIOTextBox.Text),
@@ -84,11 +87,6 @@ namespace CurseWork
                     new ColumnValuePair("Номер_телефона_читача", "string", PhoneTextBox.Text));
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(ReadersListView, DbConnection, "SELECT * FROM Читачі", 4);
-            }
-            else
-            {
-                MessageBox.Show("Виберіть поле для редагування!");
-            }
         }
 
         public void Table_Closed(object sender, FormClosedEventArgs e)

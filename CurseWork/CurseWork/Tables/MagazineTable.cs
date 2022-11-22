@@ -46,19 +46,18 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(AddNumberReaderTextBox.Text))
+            if (!FormService.IsValidData(CodeNumberTextBox, StatusTextBox, AddNumberReaderTextBox))
             {
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
+    
                 FillValuesArr(true);
                 ColumnValuePair[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
                 string result = DatabaseHelper.CreateRecordSqlQuerry("Журнал", columnValues);
-                MessageBox.Show(result);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
-            }
-            else
-            {
-                MessageBox.Show("Номер читацького квитка повинен бути заповненим!");
-            }
+            
         }
         private void FillValuesArr(bool add = false)
         {
@@ -69,13 +68,17 @@ namespace CurseWork
         }
         public void EditButton_Click(object sender, EventArgs e)
         {
-
+            if(!FormService.IsValidData(CodeNumberTextBox, StatusTextBox, NumberReaderComboBox))
+            {
+                MessageBox.Show("Усі поля повинні бути заповненими");
+                return;
+            }
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 FillValuesArr();
                 ColumnValuePair[] columnValues = DatabaseHelper.GetColumnValues(columnNames, types, values);
                 string result = DatabaseHelper.UpdateRecordSqlQuery("Журнал", new ColumnValuePair("Код_УДК", "string", CodeNumberTextBox.Text), columnValues);
-                MessageBox.Show(result);
+     
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
             }
@@ -89,7 +92,6 @@ namespace CurseWork
             if (!string.IsNullOrEmpty(NumberReaderComboBox.Text))
             {
                 string result = DatabaseHelper.DeleteRecordSqlQuery("Журнал", new ColumnValuePair("Код_УДК", "string", CodeNumberTextBox.Text));
-                MessageBox.Show(result);
                 DatabaseHelper.SaveToDataBaseWithoutResult(result, DbConnection);
                 FormService.UpdateListViewWithDB(MagazineListView, DbConnection, "SELECT * FROM Журнал", 3);
             }
