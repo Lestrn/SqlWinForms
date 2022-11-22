@@ -124,6 +124,12 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
+            if (!FormService.IsValidData(BookNameTextBox, AuthorComboBox, DayOutTextBox, GenresComboBox, PublishComboBox, CostTextBox, AmountTextBox, NewDayOutComboBox, DescriptionTextBox, KeyWordsTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var createQuery = DatabaseHelper.CreateRecordSqlQuerry("Бібліотека", new ColumnValuePair[]
             {
                 new ColumnValuePair("Назва_книги", "string", BookNameTextBox.Text),

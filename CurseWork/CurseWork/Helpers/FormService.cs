@@ -62,5 +62,29 @@ namespace CurseWork
                 listView.Columns.Add(columns[i]);
             }
         }
+
+        public static bool IsValidData(params Control[] controls)
+        {
+            foreach (var control in controls)
+            {
+                if (control is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+
+                else if (control is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 }
