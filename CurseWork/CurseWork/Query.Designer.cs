@@ -36,44 +36,43 @@
             // QueryTextBox
             // 
             this.QueryTextBox.Enabled = false;
-            this.QueryTextBox.Location = new System.Drawing.Point(2, 58);
-            this.QueryTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.QueryTextBox.Location = new System.Drawing.Point(3, 71);
+            this.QueryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QueryTextBox.Multiline = true;
             this.QueryTextBox.Name = "QueryTextBox";
-            this.QueryTextBox.Size = new System.Drawing.Size(318, 60);
+            this.QueryTextBox.Size = new System.Drawing.Size(423, 73);
             this.QueryTextBox.TabIndex = 0;
             // 
             // CaptionLabel
             // 
             this.CaptionLabel.AutoSize = true;
-            this.CaptionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.CaptionLabel.Location = new System.Drawing.Point(9, 15);
-            this.CaptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CaptionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaptionLabel.Location = new System.Drawing.Point(12, 18);
             this.CaptionLabel.Name = "CaptionLabel";
-            this.CaptionLabel.Size = new System.Drawing.Size(68, 26);
+            this.CaptionLabel.Size = new System.Drawing.Size(60, 24);
             this.CaptionLabel.TabIndex = 1;
             this.CaptionLabel.Text = "Запит";
             // 
             // QueryListView
             // 
             this.QueryListView.HideSelection = false;
-            this.QueryListView.Location = new System.Drawing.Point(2, 121);
-            this.QueryListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.QueryListView.Location = new System.Drawing.Point(3, 149);
+            this.QueryListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QueryListView.Name = "QueryListView";
-            this.QueryListView.Size = new System.Drawing.Size(318, 283);
+            this.QueryListView.Size = new System.Drawing.Size(423, 347);
             this.QueryListView.TabIndex = 3;
             this.QueryListView.UseCompatibleStateImageBehavior = false;
             this.QueryListView.View = System.Windows.Forms.View.Details;
             // 
             // Query
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 465);
+            this.ClientSize = new System.Drawing.Size(633, 572);
             this.Controls.Add(this.QueryListView);
             this.Controls.Add(this.CaptionLabel);
             this.Controls.Add(this.QueryTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Query";
             this.Text = "Query";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Table_Closed);
