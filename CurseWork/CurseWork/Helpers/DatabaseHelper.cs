@@ -1,5 +1,7 @@
-﻿using System.Data.OleDb;
+﻿using System;
+using System.Data.OleDb;
 using System.Text;
+using System.Windows.Forms;
 
 namespace CurseWork
 {
@@ -53,11 +55,20 @@ namespace CurseWork
             string sqlQuery = $"{stringBuilder.ToString().Trim(' ').Trim(',')}{")"}";
             return sqlQuery;
         }
+
         public static void SaveToDataBaseWithoutResult(string valueToSave, OleDbConnection dbConnection)
         {
-            OleDbCommand dbCommand = new OleDbCommand(valueToSave, dbConnection);
-            dbCommand.ExecuteNonQuery();
+            try
+            {
+                OleDbCommand dbCommand = new OleDbCommand(valueToSave, dbConnection);
+                dbCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            }
         }
+
         public static ColumnValuePair[] GetColumnValues(string[] columsName, string[] types, string[] values)
         {
             ColumnValuePair[] columnValues = new ColumnValuePair[values.Length];
