@@ -85,7 +85,14 @@ namespace CurseWork
         {
             if (LibraryListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Выберите строку для редактирования", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Виберіть рядок з списку для редагування", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (!FormService.IsValidData(BookNameTextBox, AuthorComboBox, DayOutTextBox, GenresComboBox, PublishComboBox,
+                CostTextBox, AmountTextBox, NewDayOutComboBox, DescriptionTextBox, KeyWordsTextBox, CodeUDKTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
                 return;
             }
 
@@ -112,7 +119,7 @@ namespace CurseWork
         {
             if (LibraryListView.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Выберите строку для удаления", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Виберіть рядок з списку для видалення", "Error", MessageBoxButtons.OK);
                 return;
             }
 

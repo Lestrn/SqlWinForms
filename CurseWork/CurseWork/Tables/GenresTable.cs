@@ -24,6 +24,12 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
+            if (!FormService.IsValidData(CodeGenreTextBox, GenreTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.CreateRecordSqlQuerry("Жанри",
                 new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
                 new ColumnValuePair("Жанр", "string", GenreTextBox.Text));
@@ -33,6 +39,18 @@ namespace CurseWork
 
         public void EditButton_Click(object sender, EventArgs e)
         {
+            if (GenresListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Виберіть рядок з списку для редагування", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (!FormService.IsValidData(CodeGenreTextBox, GenreTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Жанри", new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
                 new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text),
                 new ColumnValuePair("Жанр", "string", GenreTextBox.Text));
@@ -42,6 +60,12 @@ namespace CurseWork
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
+            if (GenresListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Виберіть рядок з списку для видалення", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Жанри", new ColumnValuePair("Код_жанра", "int", CodeGenreTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(GenresListView, DbConnection, "SELECT * FROM Жанри", 2);

@@ -24,6 +24,12 @@ namespace CurseWork
 
         public void AddButton_Click(object sender, EventArgs e)
         {
+            if (!FormService.IsValidData(CodeAuthorTextBox, PIBTextBox, NoteTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.CreateRecordSqlQuerry("Автори",
                 new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
                 new ColumnValuePair("ФІО", "string", PIBTextBox.Text),
@@ -34,6 +40,18 @@ namespace CurseWork
 
         public void EditButton_Click(object sender, EventArgs e)
         {
+            if (AuthorListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Виберіть рядок з списку для редагування", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (!FormService.IsValidData(CodeAuthorTextBox, PIBTextBox, NoteTextBox))
+            {
+                MessageBox.Show("Заповніть дані", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.UpdateRecordSqlQuery("Автори", new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
                 new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text),
                 new ColumnValuePair("ФІО", "string", PIBTextBox.Text),
@@ -44,6 +62,12 @@ namespace CurseWork
 
         public void RemoveButton_Click(object sender, EventArgs e)
         {
+            if (AuthorListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Виберіть рядок з списку для видалення", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
             var sqlQuery = DatabaseHelper.DeleteRecordSqlQuery("Автори", new ColumnValuePair("Код_автора", "int", CodeAuthorTextBox.Text));
             DatabaseHelper.SaveToDataBaseWithoutResult(sqlQuery, DbConnection);
             FormService.UpdateListViewWithDB(AuthorListView, DbConnection, "SELECT * FROM Автори", 3);
