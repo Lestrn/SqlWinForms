@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.libraryDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDB = new CurseWork.LibraryDB();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.LibraryListView = new System.Windows.Forms.ListView();
             this.BookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,18 +45,7 @@
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.KeyWords = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDB)).BeginInit();
             this.SuspendLayout();
-            // 
-            // libraryDBBindingSource
-            // 
-            this.libraryDBBindingSource.DataSource = this.libraryDB;
-            this.libraryDBBindingSource.Position = 0;
-            // 
-            // libraryDB
-            // 
-            this.libraryDB.DataSetName = "LibraryDB";
-            this.libraryDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // PrintBtn
             // 
@@ -65,7 +53,7 @@
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(776, 31);
             this.PrintBtn.TabIndex = 1;
-            this.PrintBtn.Text = "Print";
+            this.PrintBtn.Text = "To Excel";
             this.PrintBtn.UseVisualStyleBackColor = true;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
@@ -159,14 +147,13 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Report_FormClosed);
             this.Load += new System.EventHandler(this.Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDB)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.BindingSource libraryDBBindingSource;
-        private LibraryDB libraryDB;
+      
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.ListView LibraryListView;
         private System.Windows.Forms.ColumnHeader BookName;

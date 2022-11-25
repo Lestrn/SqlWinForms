@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CurseWork

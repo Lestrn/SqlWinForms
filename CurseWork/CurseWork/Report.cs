@@ -1,15 +1,6 @@
-﻿
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CurseWork
@@ -41,36 +32,6 @@ namespace CurseWork
         {
             ToExcel();
         }
-        //void Printer()
-        //{
-        //    PrintDocument PrintDocument = new PrintDocument();
-        //    PrintDocument.PrintPage += (object sender, PrintPageEventArgs e) =>
-        //    {
-        //        Font font = new Font("Arial", 12);
-        //        float offset = e.MarginBounds.Top;
-        //        foreach (ListViewItem Item in LibraryListView.Items)
-        //        {
-        //            for (int i = 0; i < Item.SubItems.Count - 1; i++)
-        //            {
-        //                offset += (font.GetHeight() + 5.0f);
-        //                PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
-        //                e.Graphics.DrawString(Item.SubItems[i].Text, font, Brushes.Black, location);
-        //            }
-        //            // The 5.0f is to add a small space between lines
-
-        //        }
-        //    };
-        //    PrintDocument.Print();
-        //    //foreach (ListViewItem itemRow in LibraryListView.Items)
-        //    //{
-        //    //    int i = 0;
-        //    //    for (i = 0; i < itemRow.SubItems.Count - 1; i++)
-        //    //    {
-        //    //        pdfTable.AddCell(itemRow.SubItems[i].Text);
-        //    //    }
-        //    //}
-
-        //}
         public void ToExcel()
         {
             using(SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xls", ValidateNames = true})
@@ -104,7 +65,7 @@ namespace CurseWork
                     }
                     workbook.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                     application.Quit();
-                    MessageBox.Show("VSE AHUENNO");
+                    MessageBox.Show("Saved!");
                 }
             }
         }

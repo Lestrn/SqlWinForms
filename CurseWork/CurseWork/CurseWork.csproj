@@ -254,11 +254,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LibraryDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryDB.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Tables\AuthorTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,7 +321,6 @@
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FormService.cs" />
-    <EmbeddedResource Include="LibraryReport.rdlc" />
     <EmbeddedResource Include="Tables\AuthorTable.resx">
       <DependentUpon>AuthorTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,17 +360,6 @@
     <EmbeddedResource Include="Tables\LibraryTable.resx">
       <DependentUpon>LibraryTable.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LibraryDB.xsc">
-      <DependentUpon>LibraryDB.xsd</DependentUpon>
-    </None>
-    <None Include="LibraryDB.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LibraryDB.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="LibraryDB.xss">
-      <DependentUpon>LibraryDB.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
