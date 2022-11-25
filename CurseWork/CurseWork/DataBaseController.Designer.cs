@@ -104,6 +104,7 @@
             this.ReportButton.TabIndex = 4;
             this.ReportButton.Text = "Звіт";
             this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
             // 
             // OpenQueryButton
             // 

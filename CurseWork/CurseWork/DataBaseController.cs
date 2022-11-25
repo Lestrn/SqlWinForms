@@ -57,5 +57,11 @@ namespace CurseWork
             Query queryForm = new Query(QueryComboBox.Text);
             queryForm.ShowDialog();
         }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            Form report = new Report();
+            report.ShowDialog();
+        }
     }
 }
