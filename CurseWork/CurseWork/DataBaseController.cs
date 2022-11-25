@@ -5,11 +5,13 @@ namespace CurseWork
 {
     public partial class DataBaseController : Form
     {
+        private int _attemptsLeft = 3;
+
         public DataBaseController()
         {
             InitializeComponent();
-        }
-
+        }    
+        
         public static string DatabaseConnection { get; } = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../../Database.accdb";
 
         private void OpenTableButton_Click(object sender, EventArgs e)
@@ -62,6 +64,35 @@ namespace CurseWork
         {
             Form report = new Report();
             report.ShowDialog();
+        }
+
+        private void ConfirmPassBtn_Click(object sender, EventArgs e)
+        {
+            if (PasswordTextBox.Text == "qwerty")
+            {
+                ReportButton.Enabled = true;
+                OpenQueryButton.Enabled = true;
+                OpenTableButton.Enabled = true;
+                QueryComboBox.Enabled = true;
+                TabelsComboBox.Enabled = true;
+                PasswordTextBox.Visible = false;
+                PasswordLabel.Visible = false;
+                AttemptsLeftLabel.Visible = false;
+                ConfirmPassBtn.Visible = false;
+                return;
+            }
+
+            _attemptsLeft--;
+            string attempSheet = _attemptsLeft > 1 ? "спроби" : "спроба";
+            AttemptsLeftLabel.Text = $"У вас залишилось {_attemptsLeft} {attempSheet}";
+ 
+            if (_attemptsLeft == 0)
+            {
+                this.Close();
+                return;
+            }
+
+
         }
     }
 }
